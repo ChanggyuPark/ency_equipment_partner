@@ -1,463 +1,193 @@
-/* Derived solely from the supplied HTML; all selectors are root-scoped. */
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-#ency-partner-app{--bg:#f5f6f4;--paper:#fff;--ink:#101214;--muted:#697075;--line:#e1e3e2;--green:#01cb9b;--blue:#2d54d5;--dark:#080d13;--dark2:#101923;--r:26px;--shadow:0 20px 60px rgba(12,22,31,.09)}
-#ency-partner-app *{box-sizing:border-box}
-#ency-partner-app{scroll-behavior:smooth}
-#ency-partner-app{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;word-break:keep-all}
-#ency-partner-app .wrap{width:min(1180px,calc(100% - 56px));margin:auto}
-#ency-partner-app .section{padding:100px 0}
-#ency-partner-app .white{background:#fff}
-#ency-partner-app .eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--blue);text-transform:uppercase;margin-bottom:18px}
-#ency-partner-app .h2{font-size:clamp(34px,4.3vw,58px);line-height:1.08;letter-spacing:-.045em;margin:0}
-#ency-partner-app .desc{font-size:18px;line-height:1.75;color:var(--muted);margin:22px 0 0}
-#ency-partner-app .grad{background:linear-gradient(105deg,var(--green),#21a8d8 52%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
-#ency-partner-app .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;border:0;background:linear-gradient(105deg,var(--green),var(--blue));color:#fff;font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;box-shadow:0 12px 30px rgba(45,84,213,.2);transition:.2s}
-#ency-partner-app .btn:hover{transform:translateY(-2px)}
-#ency-partner-app .btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);box-shadow:none}
-#ency-partner-app .dark{color:#fff;background:#091019}
-#ency-partner-app .dark .desc{color:#aab6c2}
-#ency-partner-app .hero{position:relative;min-height:780px;overflow:hidden;background:#070c12;color:#fff;display:flex;align-items:center}
-#ency-partner-app .hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(5,10,16,.96) 0%,rgba(5,10,16,.84) 43%,rgba(5,10,16,.35) 78%,rgba(5,10,16,.58) 100%),url('https://ik.imagekit.io/smartware/ency-partner/landing-page/hero-background.jpg');background-size:cover;background-position:center}
-#ency-partner-app .hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 42%,rgba(1,203,155,.17),transparent 27%),radial-gradient(circle at 60% 65%,rgba(45,84,213,.22),transparent 35%)}
-#ency-partner-app .hero-grid{position:absolute;inset:0;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000,transparent 80%)}
-#ency-partner-app .hero-inner{position:relative;z-index:2;padding:150px 0 120px}
-#ency-partner-app .hero-copy{max-width:820px}
-#ency-partner-app .hero .eyebrow{color:#74e6cb}
-#ency-partner-app .hero h1{font-size:clamp(48px,6.2vw,82px);line-height:1.02;letter-spacing:-.055em;margin:0}
-#ency-partner-app .hero-sub{max-width:710px;font-size:20px;line-height:1.72;color:#c9d2da;margin:28px 0}
-#ency-partner-app .hero-sub strong{color:#fff}
-#ency-partner-app .hero-actions{display:flex;gap:10px;margin-top:32px}
-#ency-partner-app .proofbar{position:absolute;z-index:3;left:50%;bottom:0;transform:translate(-50%,50%);width:min(1180px,calc(100% - 56px));display:grid;grid-template-columns:repeat(3,1fr);background:#fff;color:var(--ink);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
-#ency-partner-app .proof{padding:28px 32px;border-right:1px solid var(--line)}
-#ency-partner-app .proof:last-child{border:0}
-#ency-partner-app .proof small{display:block;font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--blue);margin-bottom:8px}
-#ency-partner-app .proof b{font-size:20px;letter-spacing:-.025em}
-#ency-partner-app .proof p{font-size:14px;color:var(--muted);line-height:1.55;margin:7px 0 0}
-#ency-partner-app .opportunity{padding-top:150px}
-#ency-partner-app .split-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:end;margin-bottom:48px}
-#ency-partner-app .routes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-#ency-partner-app .route-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;min-height:280px;position:relative;overflow:hidden;transition:.25s}
-#ency-partner-app .route-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-#ency-partner-app .route-card .num{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.1em}
-#ency-partner-app .route-card h3{font-size:25px;letter-spacing:-.035em;margin:54px 0 12px}
-#ency-partner-app .route-card p{color:var(--muted);line-height:1.7;margin:0}
-#ency-partner-app .route-card.featured{background:linear-gradient(145deg,#101820,#0a1118);color:#fff;border-color:#1c2c38}
-#ency-partner-app .route-card.featured p{color:#aeb9c2}
-#ency-partner-app .route-card.featured:after{content:"MACHINE + CAM";position:absolute;right:-8px;top:26px;font-size:11px;font-weight:900;letter-spacing:.12em;color:#74e6cb;transform:rotate(90deg)}
-#ency-partner-app .quote-section{background:#fff}
-#ency-partner-app .quote-box{margin-top:50px;background:#0b121a;border-radius:34px;padding:54px;color:#fff;position:relative;overflow:hidden}
-#ency-partner-app .quote-box:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-240px;background:radial-gradient(circle,rgba(1,203,155,.2),rgba(45,84,213,.08) 45%,transparent 68%)}
-#ency-partner-app .quote-title{max-width:760px;position:relative;z-index:2}
-#ency-partner-app .quote-title h3{font-size:clamp(34px,4.2vw,56px);line-height:1.08;letter-spacing:-.045em;margin:0}
-#ency-partner-app .quote-title p{font-size:17px;color:#aeb9c2;line-height:1.7}
-#ency-partner-app .compare{display:grid;grid-template-columns:1fr 64px 1fr;gap:20px;align-items:stretch;margin-top:42px;position:relative;z-index:2}
-#ency-partner-app .compare-card{border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:28px;background:rgba(255,255,255,.045)}
-#ency-partner-app .compare-card.good{background:linear-gradient(145deg,rgba(1,203,155,.11),rgba(45,84,213,.12));border-color:rgba(88,216,189,.34)}
-#ency-partner-app .compare-card small{font-weight:900;letter-spacing:.1em;color:#92a0ad}
-#ency-partner-app .compare-card h4{font-size:26px;margin:12px 0 20px}
-#ency-partner-app .stack{display:flex;flex-wrap:wrap;gap:8px}
-#ency-partner-app .chip{padding:10px 13px;border-radius:12px;background:rgba(255,255,255,.08);font-weight:700;font-size:14px}
-#ency-partner-app .good .chip{background:rgba(1,203,155,.12)}
-#ency-partner-app .compare-card .result{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);color:#c7d0d7;line-height:1.65}
-#ency-partner-app .vs{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#72e3c9}
-#ency-partner-app .quote-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;position:relative;z-index:2}
-#ency-partner-app .quote-foot div{padding:20px;border-radius:18px;background:rgba(255,255,255,.06)}
-#ency-partner-app .quote-foot b{display:block;font-size:17px;margin-bottom:6px}
-#ency-partner-app .quote-foot span{font-size:13px;color:#aeb9c2;line-height:1.5}
-#ency-partner-app .role-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;margin-top:50px}
-#ency-partner-app .role-card{border-radius:30px;padding:38px;background:#fff;border:1px solid var(--line)}
-#ency-partner-app .role-card.ency{background:linear-gradient(145deg,#eefbf7,#f2f5ff);border-color:#d8e9e5}
-#ency-partner-app .role-label{font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--blue)}
-#ency-partner-app .role-card h3{font-size:30px;margin:14px 0 25px;letter-spacing:-.035em}
-#ency-partner-app .role-steps{display:flex;flex-wrap:wrap;gap:8px}
-#ency-partner-app .role-steps span{background:#f3f4f2;border-radius:999px;padding:10px 13px;font-size:14px;font-weight:700}
-#ency-partner-app .ency .role-steps span{background:#fff}
-#ency-partner-app .support-mini{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:18px}
-#ency-partner-app .support-mini div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 14px;min-height:112px}
-#ency-partner-app .support-mini b{display:block;font-size:14px;margin-top:22px}
-#ency-partner-app .support-mini small{font-weight:900;color:var(--green)}
-#ency-partner-app .expansion{background:#0a1118;color:#fff;overflow:hidden}
-#ency-partner-app .exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-#ency-partner-app .expansion .desc{color:#aeb9c2}
-#ency-partner-app .product-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:32px}
-#ency-partner-app .product-flow span{padding:11px 15px;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-weight:800}
-#ency-partner-app .product-flow i{color:#58d8bd;font-style:normal}
-#ency-partner-app .visual-stack{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:240px 190px;gap:12px}
-#ency-partner-app .visual-stack figure{margin:0;border-radius:24px;overflow:hidden;position:relative;background:#17212b}
-#ency-partner-app .visual-stack figure:first-child{grid-row:1/3}
-#ency-partner-app .visual-stack img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.06)}
-#ency-partner-app .visual-stack figcaption{position:absolute;left:16px;bottom:14px;padding:8px 11px;border-radius:999px;background:rgba(4,9,14,.74);font-size:11px;font-weight:900;letter-spacing:.08em}
-#ency-partner-app .apps{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
-#ency-partner-app .apps span{font-size:12px;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:#bdc7cf}
-#ency-partner-app .process{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}
-#ency-partner-app .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;min-height:170px}
-#ency-partner-app .step b{display:block;color:var(--blue);font-size:12px}
-#ency-partner-app .step strong{display:block;font-size:18px;margin:34px 0 8px}
-#ency-partner-app .step p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
-#ency-partner-app .faq{margin-top:54px;border-top:1px solid var(--line)}
-#ency-partner-app .faq-item{border-bottom:1px solid var(--line)}
-#ency-partner-app .faq-q{width:100%;display:flex;justify-content:space-between;gap:20px;padding:22px 0;background:none;border:0;font:inherit;font-size:17px;font-weight:800;text-align:left;cursor:pointer}
-#ency-partner-app .faq-a{display:none;color:var(--muted);line-height:1.7;padding:0 36px 22px 0}
-#ency-partner-app .faq-item.open .faq-a{display:block}
-#ency-partner-app .cta{padding:90px 0;background:radial-gradient(circle at 78% 30%,rgba(45,84,213,.3),transparent 28%),radial-gradient(circle at 20% 70%,rgba(1,203,155,.18),transparent 25%),#091019;color:#fff}
-#ency-partner-app .cta-inner{display:flex;align-items:end;justify-content:space-between;gap:40px}
-#ency-partner-app .cta h2{font-size:clamp(38px,5vw,66px);line-height:1.05;letter-spacing:-.05em;margin:0}
-#ency-partner-app .cta p{color:#b7c2ca;line-height:1.7}
-#ency-partner-app .apply-head{text-align:center;max-width:720px;margin:0 auto 44px}
-#ency-partner-app .form-wrap{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}
-#ency-partner-app .form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-#ency-partner-app .field{display:flex;flex-direction:column;gap:8px}
-#ency-partner-app .field label{font-size:14px;font-weight:800}
-#ency-partner-app .field input, #ency-partner-app .field textarea{width:100%;border:1px solid #d9dcda;border-radius:13px;padding:14px 15px;font:inherit;background:#fbfcfb}
-#ency-partner-app .field textarea{min-height:120px;resize:vertical}
-#ency-partner-app .field:has(textarea), #ency-partner-app .privacy-consent, #ency-partner-app .form>.btn, #ency-partner-app #partnerSubmitStatus{grid-column:1/-1}
-#ency-partner-app .options{display:flex;gap:8px}
-#ency-partner-app .options label{flex:1}
-#ency-partner-app .options input{display:none}
-#ency-partner-app .options span{display:flex;align-items:center;justify-content:center;border:1px solid #d9dcda;border-radius:13px;padding:14px}
-#ency-partner-app .options input:checked+span{border-color:var(--blue);background:#f1f4ff;color:var(--blue)}
-#ency-partner-app .company-help{color:var(--muted)}
-#ency-partner-app .privacy-consent{display:flex;gap:10px;font-size:12px;color:var(--muted);line-height:1.55}
-#ency-partner-app .privacy-consent input{width:auto}
-#ency-partner-app .phone{background:#101820;color:#fff;border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:10px;position:sticky;top:20px}
-#ency-partner-app .phone .consult-label{font-size:12px;color:#72e3c9;font-weight:900}
-#ency-partner-app .phone .consult-name{font-size:22px}
-#ency-partner-app .phone a{color:#fff;text-decoration:none}
-#ency-partner-app .submit-status{margin-top:8px;font-weight:700}
-#ency-partner-app .submit-status.success{color:#087d60}
-#ency-partner-app .submit-status.error{color:#c53939}
-#ency-partner-app footer{background:#0b1015;color:#8f9aa3;padding:42px 0;font-size:13px;line-height:1.8}
-#ency-partner-app footer strong{color:#fff;display:block;margin-bottom:8px;font-size:16px}
-@media(max-width:980px){#ency-partner-app .split-head, #ency-partner-app .exp-grid{grid-template-columns:1fr;gap:28px}
-#ency-partner-app .routes{grid-template-columns:1fr}
-#ency-partner-app .role-grid{grid-template-columns:1fr}
-#ency-partner-app .support-mini{grid-template-columns:repeat(3,1fr)}
-#ency-partner-app .process{grid-template-columns:repeat(3,1fr)}
-#ency-partner-app .form-wrap{grid-template-columns:1fr}
-#ency-partner-app .phone{position:static}
-#ency-partner-app .hero{min-height:740px}
-#ency-partner-app .proofbar{grid-template-columns:1fr;position:relative;left:auto;bottom:auto;transform:none;margin:-74px auto 0}
-#ency-partner-app .proof{border-right:0;border-bottom:1px solid var(--line)}
-#ency-partner-app .proof:last-child{border:0}
-#ency-partner-app .opportunity{padding-top:90px}
-#ency-partner-app .compare{grid-template-columns:1fr}
-#ency-partner-app .vs{padding:2px}
-#ency-partner-app .quote-foot{grid-template-columns:1fr}
-#ency-partner-app .visual-stack{min-height:470px}
-}
-@media(max-width:640px){#ency-partner-app .wrap{width:min(100% - 32px,1180px)}
-#ency-partner-app .section{padding:74px 0}
-#ency-partner-app .hero{min-height:700px}
-#ency-partner-app .hero-inner{padding:115px 0 100px}
-#ency-partner-app .hero h1{font-size:45px}
-#ency-partner-app .hero-sub{font-size:17px}
-#ency-partner-app .hero-actions{flex-direction:column;align-items:stretch}
-#ency-partner-app .hero-actions .btn{width:100%}
-#ency-partner-app .proofbar{width:calc(100% - 32px);border-radius:20px}
-#ency-partner-app .split-head{margin-bottom:28px}
-#ency-partner-app .h2{font-size:36px}
-#ency-partner-app .desc{font-size:16px}
-#ency-partner-app .quote-box{padding:30px 20px;border-radius:26px}
-#ency-partner-app .support-mini{grid-template-columns:repeat(2,1fr)}
-#ency-partner-app .visual-stack{grid-template-columns:1fr;grid-template-rows:220px 160px 160px;min-height:auto}
-#ency-partner-app .visual-stack figure:first-child{grid-row:auto}
-#ency-partner-app .process{grid-template-columns:1fr}
-#ency-partner-app .form{grid-template-columns:1fr;padding:24px}
-#ency-partner-app .field:has(textarea), #ency-partner-app .privacy-consent, #ency-partner-app .form>.btn, #ency-partner-app #partnerSubmitStatus{grid-column:auto}
-#ency-partner-app .cta-inner{display:block}
-#ency-partner-app .cta .btn{margin-top:20px;width:100%}
-}
-#ency-partner-app .quote-box{background:#f7f9fb;border:1px solid #e5e9ee;box-shadow:0 18px 55px rgba(12,22,31,.06)}
-#ency-partner-app .quote-box:after{background:radial-gradient(circle,rgba(1,203,155,.12),rgba(45,84,213,.06) 45%,transparent 68%)}
-#ency-partner-app .compare{grid-template-columns:1fr 72px 1.08fr}
-#ency-partner-app .compare-card{background:#fff;border:1px solid #e4e7eb;color:#66717c;box-shadow:none;opacity:.78}
-#ency-partner-app .compare-card small{color:#9aa3ab}
-#ency-partner-app .compare-card h4{color:#68737d}
-#ency-partner-app .compare-card .chip{background:#f1f3f5;color:#7b858e}
-#ency-partner-app .compare-card .result{border-top:1px solid #e7eaed;color:#7c8790}
-#ency-partner-app .compare-card.good{opacity:1;background:linear-gradient(145deg,#0d1720,#102538);border:1px solid rgba(64,209,180,.7);color:#fff;box-shadow:0 22px 52px rgba(13,55,75,.22);transform:translateY(-8px)}
-#ency-partner-app .compare-card.good small{color:#72e3c9}
-#ency-partner-app .compare-card.good h4{color:#fff}
-#ency-partner-app .compare-card.good .chip{background:rgba(1,203,155,.12);color:#eafffa;border:1px solid rgba(114,227,201,.18)}
-#ency-partner-app .compare-card.good .result{border-top-color:rgba(255,255,255,.13);color:#d3dde4}
-#ency-partner-app .vs{width:48px;height:48px;border-radius:50%;align-self:center;justify-self:center;background:#126bd4;color:#fff;box-shadow:0 10px 26px rgba(18,107,212,.2)}
-#ency-partner-app .compare-points{display:grid;gap:10px;margin-top:22px}
-#ency-partner-app .compare-point{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:750}
-#ency-partner-app .compare-point:before{content:"";width:7px;height:7px;border-radius:50%;background:#c3c9cf;flex:0 0 auto}
-#ency-partner-app .good .compare-point:before{background:#58d8bd;box-shadow:0 0 0 5px rgba(88,216,189,.08)}
-@media(max-width:980px){#ency-partner-app .compare{grid-template-columns:1fr}
-#ency-partner-app .compare-card.good{transform:none}
-#ency-partner-app .vs{margin:0 auto}
-}
-#ency-partner-app .hero-inner{text-align:center;padding:118px 0 178px}
-#ency-partner-app .hero-copy{max-width:900px;margin:0 auto}
-#ency-partner-app .hero h1{font-size:clamp(44px,5.2vw,70px);font-weight:800}
-#ency-partner-app .hero h1 .hero-light{font-weight:300}
-#ency-partner-app .hero h1 strong{font-weight:800}
-#ency-partner-app .hero-sub{margin:26px auto}
-#ency-partner-app .hero-actions{justify-content:center}
-#ency-partner-app .proofbar{bottom:34px;transform:translateX(-50%);background:rgba(255,255,255,.90);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-#ency-partner-app .opportunity{padding-top:100px}
-#ency-partner-app .opportunity-head{text-align:center;max-width:900px;margin:0 auto 34px}
-#ency-partner-app .opportunity-head .h2{font-weight:300}
-#ency-partner-app .opportunity-head .desc{margin:16px auto 0}
-#ency-partner-app .routes{gap:12px}
-#ency-partner-app .route-card, #ency-partner-app .route-card.featured{min-height:190px;padding:24px;background:#fff;color:var(--ink);border-color:var(--line)}
-#ency-partner-app .route-card h3{margin:30px 0 10px;font-size:22px}
-#ency-partner-app .route-card p, #ency-partner-app .route-card.featured p{color:var(--muted)}
-#ency-partner-app .route-card.featured:after{display:none}
-#ency-partner-app .route-tag{display:inline-flex;font-size:10px;font-weight:850;letter-spacing:.1em;color:var(--blue);padding:7px 9px;background:#eef2ff;border-radius:999px}
-#ency-partner-app .quote-head{text-align:center;max-width:900px;margin:0 auto}
-#ency-partner-app .quote-head .h2 .light-line{font-weight:300}
-#ency-partner-app .quote-head .h2 strong{font-weight:700}
-#ency-partner-app .quote-head .desc{margin:18px auto 0}
-#ency-partner-app .quote-box{margin-top:42px}
-#ency-partner-app .compare-slogan{text-align:center;font-size:clamp(22px,2.5vw,34px);line-height:1.35;letter-spacing:-.035em;margin:38px auto 0;max-width:900px;font-weight:300}
-#ency-partner-app .compare-slogan strong{font-weight:700}
-#ency-partner-app .role-head{text-align:center;max-width:900px;margin:0 auto 44px}
-#ency-partner-app .role-head .h2{font-weight:300}
-#ency-partner-app .role-head .desc{margin:18px auto 0}
-#ency-partner-app .refined-role{grid-template-columns:1fr 1fr;margin-top:0}
-#ency-partner-app .refined-role .role-card{min-height:190px}
-#ency-partner-app .refined-role .role-card:first-child{background:#f3f4f2}
-#ency-partner-app .refined-role .role-card.ency{background:linear-gradient(145deg,#eafaf5,#edf2ff);border-color:#cfe6df}
-#ency-partner-app .refined-role .role-card h3{margin:0 0 28px;font-size:28px}
-#ency-partner-app .support-mini{display:none!important}
-#ency-partner-app .support-visual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
-#ency-partner-app .support-visual{height:245px;border-radius:22px;overflow:hidden;position:relative;background:#111}
-#ency-partner-app .support-visual .image-slot{position:absolute;inset:0}
-#ency-partner-app .support-visual img{width:100%;height:100%;object-fit:cover;display:block}
-#ency-partner-app .support-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,7,10,.08),rgba(4,7,10,.82))}
-#ency-partner-app .support-visual-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:#fff}
-#ency-partner-app .support-visual-copy .num{font-size:10px;opacity:.8}
-#ency-partner-app .support-visual-copy h3{font-size:20px;margin:8px 0 6px}
-#ency-partner-app .support-visual-copy p{font-size:12px;line-height:1.55;margin:0;color:rgba(255,255,255,.9)}
-#ency-partner-app .expansion{background:#fff;color:var(--ink)}
-#ency-partner-app .expansion .desc{color:var(--muted)}
-#ency-partner-app .expansion .product-flow span{border-color:var(--line);background:#fff}
-#ency-partner-app .expansion .product-flow i{color:var(--green)}
-#ency-partner-app .expansion .apps span{background:#eef0ef;color:#5f676b}
-#ency-partner-app .expansion .visual-stack figcaption{color:#fff}
-#ency-partner-app .expansion .h2{font-weight:400}
-#ency-partner-app .join-head{text-align:center;max-width:900px;margin:auto}
-#ency-partner-app .join-head .desc{max-width:720px;margin:18px auto 0}
-#ency-partner-app .process{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:58px}
-#ency-partner-app .process:before{content:"";position:absolute;left:8.33%;right:8.33%;top:19px;height:1px;background:#c8ccce}
-#ency-partner-app .step{position:relative;text-align:center;padding:0 9px;min-height:150px;background:transparent;border:0}
-#ency-partner-app .step b{position:relative;z-index:1;margin:0 auto 20px;width:40px;height:40px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:11px}
-#ency-partner-app .step:last-child b{background:linear-gradient(135deg,var(--green),var(--blue))}
-#ency-partner-app .step strong{font-size:14px;display:block;margin:0 0 8px}
-#ency-partner-app .step p{font-size:11px;line-height:1.55;color:#858b8f;margin:0}
-#ency-partner-app .faq{max-width:920px;margin:62px auto 0;background:#eceeed;border:0;border-radius:30px;padding:24px}
-#ency-partner-app .faq-item{background:#f8f9f8;border-radius:16px;margin:7px 0;overflow:hidden;border:1px solid #ddd}
-#ency-partner-app .faq-q{padding:18px 20px}
-#ency-partner-app .faq-a{padding:0 20px 20px}
-#ency-partner-app .faq-item.open{background:#fff}
-#ency-partner-app .cta-inner{align-items:center}
-#ency-partner-app .cta-copy{max-width:820px}
-#ency-partner-app .cta h2 .cta-light{font-weight:300}
-#ency-partner-app .cta h2 strong{font-weight:800}
-#ency-partner-app #apply{background:#fff}
-#ency-partner-app .apply-head{max-width:980px;margin:0 auto 42px}
-#ency-partner-app .apply-head .h2{font-size:clamp(36px,3.3vw,54px)}
-#ency-partner-app .apply-head .desc{margin:16px auto 0}
-#ency-partner-app .form-wrap{display:block;max-width:900px;margin:auto}
-#ency-partner-app .form{display:block;background:#fff;border:1px solid #e0e1e1;border-radius:28px;padding:40px}
-#ency-partner-app .field{display:block;margin-bottom:26px}
-#ency-partner-app .field label{display:block;font-size:13px;font-weight:650;margin-bottom:9px}
-#ency-partner-app .field input, #ency-partner-app .field textarea{width:100%;border:0;border-bottom:1px solid #cfd2d3;border-radius:0;padding:11px 2px;background:transparent;font:inherit;outline:none}
-#ency-partner-app .field textarea{min-height:90px}
-#ency-partner-app .options{display:flex;gap:8px;flex-wrap:wrap}
-#ency-partner-app .options label{margin:0}
-#ency-partner-app .options span{display:inline-flex;padding:10px 14px;border:1px solid #cfd2d3;border-radius:999px}
-#ency-partner-app .options input:checked+span{background:#111;color:#fff;border-color:#111}
-#ency-partner-app .privacy-consent{margin-bottom:26px}
-#ency-partner-app .form>.btn{width:auto}
-#ency-partner-app .phone{position:static;background:transparent;color:#747a7e;text-align:center;margin-top:28px;padding:0;display:block}
-#ency-partner-app .phone .consult-label{color:#747a7e}
-#ency-partner-app .phone .consult-name{display:block;color:#111;font-size:16px;margin:5px 0}
-#ency-partner-app .phone a{color:#111}
-#ency-partner-app .phone span{margin:0 7px}
-@media(max-width:980px){#ency-partner-app .hero-inner{padding:100px 0 110px}
-#ency-partner-app .proofbar{position:relative;left:auto;bottom:auto;transform:none;margin:-52px auto 0}
-#ency-partner-app .support-visual-grid{grid-template-columns:1fr 1fr}
-#ency-partner-app .process{grid-template-columns:repeat(3,1fr);gap:34px 0}
-#ency-partner-app .process:before{display:none}
-#ency-partner-app .cta-inner{align-items:flex-start}
-#ency-partner-app .refined-role{grid-template-columns:1fr}
-}
-@media(max-width:560px){#ency-partner-app .hero h1{font-size:38px}
-#ency-partner-app .support-visual-grid{grid-template-columns:1fr}
-#ency-partner-app .process{grid-template-columns:1fr}
-#ency-partner-app .form{padding:28px 20px}
-#ency-partner-app .cta-inner{display:block}
-#ency-partner-app .cta .btn{margin-top:22px}
-#ency-partner-app .phone span{display:block;margin:4px 0}
-}
-#ency-partner-app .hero{border-bottom:0}
-#ency-partner-app .proof-bridge{position:relative;z-index:8;background:linear-gradient(to bottom,#111 0 50%,var(--bg) 50% 100%);padding:0}
-#ency-partner-app .proof-bridge .wrap{position:relative}
-#ency-partner-app .proofbar{position:relative!important;left:auto!important;bottom:auto!important;transform:none!important;width:100%!important;margin:-58px auto 0!important;background:#fff!important;border:1px solid rgba(255,255,255,.8)!important;box-shadow:0 18px 48px rgba(12,18,24,.13)!important;overflow:hidden}
-#ency-partner-app .proof{background:#fff}
-#ency-partner-app .opportunity{padding-top:92px}
-#ency-partner-app .routes{align-items:stretch}
-#ency-partner-app .route-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
-#ency-partner-app .route-card .route-tag{min-height:26px;display:inline-flex;align-items:center}
-#ency-partner-app .route-card h3{margin-top:20px}
-#ency-partner-app .route-card p{margin-top:auto;padding-top:12px}
-#ency-partner-app .compare-slogan{max-width:1100px!important;margin:28px auto 0!important;padding:20px 28px!important;border-radius:18px!important;background:linear-gradient(90deg,#eafaf5,#edf2ff)!important;border:1px solid #cfe6df!important;text-align:center!important;font-size:clamp(16px,1.55vw,20px)!important;line-height:1.5!important;white-space:nowrap;box-shadow:0 10px 28px rgba(24,55,70,.06)}
-#ency-partner-app .compare-slogan strong{font-weight:850;color:#173a78}
-#ency-partner-app .refined-role .role-card:first-child{background:#fff!important;border-color:var(--line)!important}
-#ency-partner-app .refined-role .role-card.ency{position:relative;margin-bottom:30px}
-#ency-partner-app .refined-role .role-card.ency:after{content:"";position:absolute;left:50%;bottom:-31px;width:1px;height:31px;background:#cfd7d5}
-#ency-partner-app .support-visual-grid{position:relative;margin-top:0!important;padding-top:30px}
-#ency-partner-app .support-visual-grid:before{content:"ENCY KOREA PARTNER SUPPORT";position:absolute;top:0;left:50%;transform:translate(-50%,-50%);padding:7px 14px;border:1px solid #d7dddb;border-radius:999px;background:var(--bg);font-size:10px;font-weight:850;letter-spacing:.12em;color:#68716e;z-index:2}
-#ency-partner-app .support-visual-grid:after{content:"";position:absolute;left:8%;right:8%;top:0;height:1px;background:#cfd7d5}
-#ency-partner-app .expansion{padding-top:105px}
-#ency-partner-app .exp-grid{grid-template-columns:1fr!important;gap:42px!important}
-#ency-partner-app .exp-copy{text-align:center;max-width:1080px;margin:0 auto}
-#ency-partner-app .exp-copy .h2{max-width:920px;margin:0 auto;font-size:clamp(38px,4.2vw,58px);line-height:1.08}
-#ency-partner-app .exp-copy .desc{margin:20px auto 0;max-width:720px}
-#ency-partner-app .product-flow{justify-content:center;display:flex!important;align-items:center;gap:10px;flex-wrap:wrap;margin-top:34px}
-#ency-partner-app .product-flow span{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:165px}
-#ency-partner-app .product-logo-slot{width:30px;height:30px;display:inline-grid;place-items:center;flex:0 0 auto}
-#ency-partner-app .product-logo-slot img{width:100%;height:100%;object-fit:contain;display:block}
-#ency-partner-app .apps{justify-content:center}
-#ency-partner-app .visual-stack{max-width:980px;width:100%;margin:0 auto}
-#ency-partner-app #join{background:#eef0ef!important;border-top:1px solid #e0e3e2;border-bottom:1px solid #e0e3e2;padding-top:105px;padding-bottom:105px}
-#ency-partner-app .join-head{max-width:900px}
-#ency-partner-app .process{max-width:900px;margin:66px auto 0!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-areas:"s1 s2 s3" "s6 s5 s4"!important;column-gap:70px!important;row-gap:86px!important;position:relative;padding:0 0 2px}
-#ency-partner-app .process:before{display:none!important}
-#ency-partner-app .process-path{position:absolute;left:0;top:0;width:calc(100% + 64px);height:calc(100% - 1px);overflow:visible;z-index:0;pointer-events:none}
-#ency-partner-app .process-path .route{fill:none;stroke:#c9cdcc;stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
-#ency-partner-app .process-path .arrow{fill:#9ea5a3;stroke:none}
-#ency-partner-app .process .step{position:relative;z-index:1;border:0!important;padding:0!important;min-height:150px;background:transparent!important;text-align:left}
-#ency-partner-app .process .step:nth-of-type(1){grid-area:s1}
-#ency-partner-app .process .step:nth-of-type(2){grid-area:s2}
-#ency-partner-app .process .step:nth-of-type(3){grid-area:s3}
-#ency-partner-app .process .step:nth-of-type(4){grid-area:s4}
-#ency-partner-app .process .step:nth-of-type(5){grid-area:s5}
-#ency-partner-app .process .step:nth-of-type(6){grid-area:s6}
-#ency-partner-app .process .step b{margin:0 0 18px!important;width:40px;height:40px;background:#111;box-shadow:0 0 0 10px #eef0ef;position:relative;z-index:3}
-#ency-partner-app .process .step:last-of-type b{background:linear-gradient(135deg,var(--green),var(--blue))}
-#ency-partner-app .process .step:nth-of-type(2) b, #ency-partner-app .process .step:nth-of-type(5) b{margin-left:auto!important;margin-right:auto!important}
-#ency-partner-app .process .step:nth-of-type(3) b, #ency-partner-app .process .step:nth-of-type(4) b{margin-left:auto!important}
-#ency-partner-app .process .step:nth-of-type(2), #ency-partner-app .process .step:nth-of-type(5){text-align:center}
-#ency-partner-app .process .step:nth-of-type(3), #ency-partner-app .process .step:nth-of-type(4){text-align:right}
-#ency-partner-app .faq{background:#e3e6e5!important}
-#ency-partner-app .phone{max-width:900px;margin:12px auto 0!important;border:1px solid #e0e1e1;background:#fff;border-radius:18px;padding:16px 22px!important;display:flex;align-items:center;justify-content:center;gap:18px;text-align:left!important;color:#111!important;position:static!important}
-#ency-partner-app .phone .consult-label{font-size:12px;color:#7a8084}
-#ency-partner-app .phone .consult-name{margin:0!important;font-size:14px!important}
-#ency-partner-app .phone .contact-line{display:inline-flex!important;align-items:center;margin:0!important;padding-left:18px;border-left:1px solid #e0e1e1}
-#ency-partner-app .phone .contact-line a{font-size:14px!important}
-@media(max-width:980px){#ency-partner-app .compare-slogan{white-space:normal}
-#ency-partner-app .product-flow{display:grid!important;grid-template-columns:1fr!important}
-#ency-partner-app .product-flow>i{text-align:center;transform:rotate(90deg)}
-#ency-partner-app .product-flow span{width:100%}
-#ency-partner-app .process{grid-template-columns:1fr!important;grid-template-areas:none!important;row-gap:24px!important}
-#ency-partner-app .process-path{display:none}
-#ency-partner-app .process .step{grid-area:auto!important;text-align:center!important;min-height:auto}
-#ency-partner-app .process .step b{margin:0 auto 14px!important}
-#ency-partner-app .phone{flex-direction:column;gap:7px;text-align:center!important}
-#ency-partner-app .phone .contact-line{border-left:0;padding-left:0}
-#ency-partner-app .proof-bridge{background:var(--bg)}
-#ency-partner-app .proofbar{margin:-36px auto 0!important}
-}
-#ency-partner-app .routes .route-card p{margin-top:0!important;padding-top:0!important}
-#ency-partner-app .routes .route-card h3{min-height:54px;margin-bottom:10px!important}
-#ency-partner-app .route-copy-first{line-height:1.7}
-#ency-partner-app .compare-card:not(.good){transform:scale(.94);transform-origin:center right;opacity:.78;padding:24px}
-#ency-partner-app .compare-card:not(.good) h4{font-size:23px}
-#ency-partner-app .compare-card.good{position:relative;z-index:2}
-#ency-partner-app .role-head .h2 strong{font-weight:760}
-#ency-partner-app .refined-role{align-items:stretch}
-#ency-partner-app .refined-role .role-card{min-height:220px!important;height:100%;display:flex;flex-direction:column;justify-content:flex-start;text-align:center}
-#ency-partner-app .refined-role .role-card h3{text-align:center;margin:0 0 28px!important}
-#ency-partner-app .refined-role .role-steps{justify-content:center}
-#ency-partner-app .refined-role .role-card.ency{margin-bottom:0!important}
-#ency-partner-app .refined-role .role-card.ency:after{display:none!important;content:none!important}
-#ency-partner-app .support-visual-grid{padding-top:26px!important;margin-top:20px!important}
-#ency-partner-app .support-visual-grid:before, #ency-partner-app .support-visual-grid:after{display:none!important;content:none!important}
-#ency-partner-app #apply{background:#fff}
-#ency-partner-app .form-wrap{display:block!important;max-width:900px!important;margin:auto!important}
-#ency-partner-app .form{display:block!important;background:#fff!important;border:1px solid #e0e1e1!important;border-radius:28px!important;padding:40px!important}
-#ency-partner-app .field{display:block!important;margin-bottom:26px!important}
-#ency-partner-app .field label{display:block!important;font-size:13px!important;font-weight:650!important;margin-bottom:9px!important}
-#ency-partner-app .field input, #ency-partner-app .field textarea{width:100%!important;border:0!important;border-bottom:1px solid #cfd2d3!important;border-radius:0!important;padding:11px 2px!important;background:transparent!important;font:inherit!important;outline:none!important}
-#ency-partner-app .field textarea{min-height:90px!important}
-#ency-partner-app .options{display:flex!important;gap:8px!important;flex-wrap:wrap!important;justify-content:flex-start!important}
-#ency-partner-app .options label{margin:0!important;flex:0 0 auto!important}
-#ency-partner-app .options span{display:inline-flex!important;padding:10px 14px!important;border:1px solid #cfd2d3!important;border-radius:999px!important}
-#ency-partner-app .options input:checked+span{background:#111!important;color:#fff!important;border-color:#111!important}
-#ency-partner-app .privacy-consent{margin:0 0 34px 0!important}
-#ency-partner-app .form>.btn{width:auto!important;margin-top:0!important}
-#ency-partner-app .phone{max-width:900px;margin:12px auto 0!important;border:1px solid #e0e1e1!important;background:#fff!important;border-radius:18px!important;padding:16px 22px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:18px!important;text-align:left!important;color:#111!important;position:static!important}
-#ency-partner-app .phone .consult-label{font-size:12px!important;color:#7a8084!important}
-#ency-partner-app .phone .consult-name{margin:0!important;font-size:14px!important;color:#111!important}
-#ency-partner-app .phone .contact-line{display:inline-flex!important;align-items:center!important;margin:0!important;padding-left:18px!important;border-left:1px solid #e0e1e1!important}
-#ency-partner-app .phone .contact-line a{font-size:14px!important;color:#111!important}
-@media(max-width:980px){#ency-partner-app .compare-card:not(.good){transform:none;opacity:.72}
-#ency-partner-app .process{display:flex!important;flex-direction:column!important;gap:0!important;margin-top:42px!important;padding-left:0!important;max-width:620px!important;background-image:linear-gradient(#d8dcde,#d8dcde)!important;background-repeat:no-repeat!important;background-size:1px calc(100% - 80px)!important;background-position:20px 20px!important}
-#ency-partner-app .process-path{display:none!important}
-#ency-partner-app .process .step:nth-of-type(n){position:relative!important;display:grid!important;grid-template-columns:40px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:18px!important;min-height:112px!important;padding:0 0 28px!important;text-align:left!important;background:transparent!important}
-#ency-partner-app .process .step:nth-of-type(n):after{display:none!important;content:none!important}
-#ency-partner-app .process .step b{grid-column:1!important;grid-row:1/3!important;margin:0!important;width:40px!important;height:40px!important;box-shadow:0 0 0 7px #eef0ef!important;position:relative!important;z-index:3!important}
-#ency-partner-app .process .step strong{grid-column:2!important;grid-row:1!important;margin:2px 0 7px!important;align-self:start!important;text-align:left!important}
-#ency-partner-app .process .step p{grid-column:2!important;grid-row:2!important;margin:0!important;align-self:start!important;text-align:left!important}
-#ency-partner-app .process .step:last-of-type b{background:linear-gradient(135deg,var(--green),var(--blue))!important}
+/* ENCY Equipment Partner / Sixshop scoped stylesheet */
+#ency-equipment-partner-app{--bg:#f5f6f4;--paper:#fff;--ink:#101214;--muted:#697075;--line:#e1e3e2;--green:#01cb9b;--blue:#2d54d5;--dark:#080d13;--dark2:#101923;--r:26px;--shadow:0 20px 60px rgba(12,22,31,.09);margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;word-break:keep-all;}
+#page2762370.ency-equipment-source-hidden{display:none!important;}
 
-}
-@media(max-width:700px){#ency-partner-app .phone{flex-direction:column!important;gap:7px!important;text-align:center!important}
-#ency-partner-app .phone .contact-line{border-left:0!important;padding-left:0!important}
+#ency-equipment-partner-app{--bg:#f5f6f4;--paper:#fff;--ink:#101214;--muted:#697075;--line:#e1e3e2;--green:#01cb9b;--blue:#2d54d5;--dark:#080d13;--dark2:#101923;--r:26px;--shadow:0 20px 60px rgba(12,22,31,.09)}
+#ency-equipment-partner-app *{box-sizing:border-box}#ency-equipment-partner-app{scroll-behavior:smooth}#ency-equipment-partner-app{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;word-break:keep-all}#ency-equipment-partner-app .wrap{width:min(1180px,calc(100% - 56px));margin:auto}#ency-equipment-partner-app .section{padding:100px 0}#ency-equipment-partner-app .white{background:#fff}#ency-equipment-partner-app .eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--blue);text-transform:uppercase;margin-bottom:18px}#ency-equipment-partner-app .h2{font-size:clamp(34px,4.3vw,58px);line-height:1.08;letter-spacing:-.045em;margin:0}#ency-equipment-partner-app .desc{font-size:18px;line-height:1.75;color:var(--muted);margin:22px 0 0}#ency-equipment-partner-app .grad{background:linear-gradient(105deg,var(--green),#21a8d8 52%,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}#ency-equipment-partner-app .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;border:0;background:linear-gradient(105deg,var(--green),var(--blue));color:#fff;font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;box-shadow:0 12px 30px rgba(45,84,213,.2);transition:.2s}#ency-equipment-partner-app .btn:hover{transform:translateY(-2px)}#ency-equipment-partner-app .btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);box-shadow:none}#ency-equipment-partner-app .dark{color:#fff;background:#091019}#ency-equipment-partner-app .dark .desc{color:#aab6c2}
+/* hero */
+#ency-equipment-partner-app .hero{position:relative;min-height:780px;overflow:hidden;background:#070c12;color:#fff;display:flex;align-items:center}#ency-equipment-partner-app .hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(5,10,16,.96) 0%,rgba(5,10,16,.84) 43%,rgba(5,10,16,.35) 78%,rgba(5,10,16,.58) 100%),url('https://ik.imagekit.io/smartware/ency-partner/landing-page/hero-background.jpg');background-size:cover;background-position:center}#ency-equipment-partner-app .hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 42%,rgba(1,203,155,.17),transparent 27%),radial-gradient(circle at 60% 65%,rgba(45,84,213,.22),transparent 35%)}#ency-equipment-partner-app .hero-grid{position:absolute;inset:0;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000,transparent 80%)}#ency-equipment-partner-app .hero-inner{position:relative;z-index:2;padding:150px 0 120px}#ency-equipment-partner-app .hero-copy{max-width:820px}#ency-equipment-partner-app .hero .eyebrow{color:#74e6cb}#ency-equipment-partner-app .hero h1{font-size:clamp(48px,6.2vw,82px);line-height:1.02;letter-spacing:-.055em;margin:0}#ency-equipment-partner-app .hero-sub{max-width:710px;font-size:20px;line-height:1.72;color:#c9d2da;margin:28px 0}#ency-equipment-partner-app .hero-sub strong{color:#fff}#ency-equipment-partner-app .hero-actions{display:flex;gap:10px;margin-top:32px}#ency-equipment-partner-app .proofbar{position:absolute;z-index:3;left:50%;bottom:0;transform:translate(-50%,50%);width:min(1180px,calc(100% - 56px));display:grid;grid-template-columns:repeat(3,1fr);background:#fff;color:var(--ink);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}#ency-equipment-partner-app .proof{padding:28px 32px;border-right:1px solid var(--line)}#ency-equipment-partner-app .proof:last-child{border:0}#ency-equipment-partner-app .proof small{display:block;font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--blue);margin-bottom:8px}#ency-equipment-partner-app .proof b{font-size:20px;letter-spacing:-.025em}#ency-equipment-partner-app .proof p{font-size:14px;color:var(--muted);line-height:1.55;margin:7px 0 0}
+/* opportunity */
+#ency-equipment-partner-app .opportunity{padding-top:150px}#ency-equipment-partner-app .split-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:end;margin-bottom:48px}#ency-equipment-partner-app .routes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}#ency-equipment-partner-app .route-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;min-height:280px;position:relative;overflow:hidden;transition:.25s}#ency-equipment-partner-app .route-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}#ency-equipment-partner-app .route-card .num{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.1em}#ency-equipment-partner-app .route-card h3{font-size:25px;letter-spacing:-.035em;margin:54px 0 12px}#ency-equipment-partner-app .route-card p{color:var(--muted);line-height:1.7;margin:0}#ency-equipment-partner-app .route-card.featured{background:linear-gradient(145deg,#101820,#0a1118);color:#fff;border-color:#1c2c38}#ency-equipment-partner-app .route-card.featured p{color:#aeb9c2}#ency-equipment-partner-app .route-card.featured:after{content:"MACHINE + CAM";position:absolute;right:-8px;top:26px;font-size:11px;font-weight:900;letter-spacing:.12em;color:#74e6cb;transform:rotate(90deg)}
+/* quote */
+#ency-equipment-partner-app .quote-section{background:#fff}#ency-equipment-partner-app .quote-box{margin-top:50px;background:#0b121a;border-radius:34px;padding:54px;color:#fff;position:relative;overflow:hidden}#ency-equipment-partner-app .quote-box:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-240px;background:radial-gradient(circle,rgba(1,203,155,.2),rgba(45,84,213,.08) 45%,transparent 68%)}#ency-equipment-partner-app .quote-title{max-width:760px;position:relative;z-index:2}#ency-equipment-partner-app .quote-title h3{font-size:clamp(34px,4.2vw,56px);line-height:1.08;letter-spacing:-.045em;margin:0}#ency-equipment-partner-app .quote-title p{font-size:17px;color:#aeb9c2;line-height:1.7}#ency-equipment-partner-app .compare{display:grid;grid-template-columns:1fr 64px 1fr;gap:20px;align-items:stretch;margin-top:42px;position:relative;z-index:2}#ency-equipment-partner-app .compare-card{border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:28px;background:rgba(255,255,255,.045)}#ency-equipment-partner-app .compare-card.good{background:linear-gradient(145deg,rgba(1,203,155,.11),rgba(45,84,213,.12));border-color:rgba(88,216,189,.34)}#ency-equipment-partner-app .compare-card small{font-weight:900;letter-spacing:.1em;color:#92a0ad}#ency-equipment-partner-app .compare-card h4{font-size:26px;margin:12px 0 20px}#ency-equipment-partner-app .stack{display:flex;flex-wrap:wrap;gap:8px}#ency-equipment-partner-app .chip{padding:10px 13px;border-radius:12px;background:rgba(255,255,255,.08);font-weight:700;font-size:14px}#ency-equipment-partner-app .good .chip{background:rgba(1,203,155,.12)}#ency-equipment-partner-app .compare-card .result{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);color:#c7d0d7;line-height:1.65}#ency-equipment-partner-app .vs{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#72e3c9}#ency-equipment-partner-app .quote-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;position:relative;z-index:2}#ency-equipment-partner-app .quote-foot div{padding:20px;border-radius:18px;background:rgba(255,255,255,.06)}#ency-equipment-partner-app .quote-foot b{display:block;font-size:17px;margin-bottom:6px}#ency-equipment-partner-app .quote-foot span{font-size:13px;color:#aeb9c2;line-height:1.5}
+/* role support */
+#ency-equipment-partner-app .role-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;margin-top:50px}#ency-equipment-partner-app .role-card{border-radius:30px;padding:38px;background:#fff;border:1px solid var(--line)}#ency-equipment-partner-app .role-card.ency{background:linear-gradient(145deg,#eefbf7,#f2f5ff);border-color:#d8e9e5}#ency-equipment-partner-app .role-label{font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--blue)}#ency-equipment-partner-app .role-card h3{font-size:30px;margin:14px 0 25px;letter-spacing:-.035em}#ency-equipment-partner-app .role-steps{display:flex;flex-wrap:wrap;gap:8px}#ency-equipment-partner-app .role-steps span{background:#f3f4f2;border-radius:999px;padding:10px 13px;font-size:14px;font-weight:700}#ency-equipment-partner-app .ency .role-steps span{background:#fff}#ency-equipment-partner-app .support-mini{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:18px}#ency-equipment-partner-app .support-mini div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 14px;min-height:112px}#ency-equipment-partner-app .support-mini b{display:block;font-size:14px;margin-top:22px}#ency-equipment-partner-app .support-mini small{font-weight:900;color:var(--green)}
+/* expansion */
+#ency-equipment-partner-app .expansion{background:#0a1118;color:#fff;overflow:hidden}#ency-equipment-partner-app .exp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}#ency-equipment-partner-app .expansion .desc{color:#aeb9c2}#ency-equipment-partner-app .product-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:32px}#ency-equipment-partner-app .product-flow span{padding:11px 15px;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-weight:800}#ency-equipment-partner-app .product-flow i{color:#58d8bd;font-style:normal}#ency-equipment-partner-app .visual-stack{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:240px 190px;gap:12px}#ency-equipment-partner-app .visual-stack figure{margin:0;border-radius:24px;overflow:hidden;position:relative;background:#17212b}#ency-equipment-partner-app .visual-stack figure:first-child{grid-row:1/3}#ency-equipment-partner-app .visual-stack img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82) contrast(1.06)}#ency-equipment-partner-app .visual-stack figcaption{position:absolute;left:16px;bottom:14px;padding:8px 11px;border-radius:999px;background:rgba(4,9,14,.74);font-size:11px;font-weight:900;letter-spacing:.08em}#ency-equipment-partner-app .apps{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}#ency-equipment-partner-app .apps span{font-size:12px;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:#bdc7cf}
+/* process */
+#ency-equipment-partner-app .process{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:48px}#ency-equipment-partner-app .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;min-height:170px}#ency-equipment-partner-app .step b{display:block;color:var(--blue);font-size:12px}#ency-equipment-partner-app .step strong{display:block;font-size:18px;margin:34px 0 8px}#ency-equipment-partner-app .step p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}#ency-equipment-partner-app .faq{margin-top:54px;border-top:1px solid var(--line)}#ency-equipment-partner-app .faq-item{border-bottom:1px solid var(--line)}#ency-equipment-partner-app .faq-q{width:100%;display:flex;justify-content:space-between;gap:20px;padding:22px 0;background:none;border:0;font:inherit;font-size:17px;font-weight:800;text-align:left;cursor:pointer}#ency-equipment-partner-app .faq-a{display:none;color:var(--muted);line-height:1.7;padding:0 36px 22px 0}#ency-equipment-partner-app .faq-item.open .faq-a{display:block}
+/* CTA/form */
+#ency-equipment-partner-app .cta{padding:90px 0;background:radial-gradient(circle at 78% 30%,rgba(45,84,213,.3),transparent 28%),radial-gradient(circle at 20% 70%,rgba(1,203,155,.18),transparent 25%),#091019;color:#fff}#ency-equipment-partner-app .cta-inner{display:flex;align-items:end;justify-content:space-between;gap:40px}#ency-equipment-partner-app .cta h2{font-size:clamp(38px,5vw,66px);line-height:1.05;letter-spacing:-.05em;margin:0}#ency-equipment-partner-app .cta p{color:#b7c2ca;line-height:1.7}#ency-equipment-partner-app .apply-head{text-align:center;max-width:720px;margin:0 auto 44px}#ency-equipment-partner-app .form-wrap{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}#ency-equipment-partner-app .form{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:20px}#ency-equipment-partner-app .field{display:flex;flex-direction:column;gap:8px}#ency-equipment-partner-app .field label{font-size:14px;font-weight:800}#ency-equipment-partner-app .field input,#ency-equipment-partner-app .field textarea{width:100%;border:1px solid #d9dcda;border-radius:13px;padding:14px 15px;font:inherit;background:#fbfcfb}#ency-equipment-partner-app .field textarea{min-height:120px;resize:vertical}#ency-equipment-partner-app .field:has(textarea),#ency-equipment-partner-app .privacy-consent,#ency-equipment-partner-app .form>.btn,#ency-equipment-partner-app #partnerSubmitStatus{grid-column:1/-1}#ency-equipment-partner-app .options{display:flex;gap:8px}#ency-equipment-partner-app .options label{flex:1}#ency-equipment-partner-app .options input{display:none}#ency-equipment-partner-app .options span{display:flex;align-items:center;justify-content:center;border:1px solid #d9dcda;border-radius:13px;padding:14px}#ency-equipment-partner-app .options input:checked+span{border-color:var(--blue);background:#f1f4ff;color:var(--blue)}#ency-equipment-partner-app .company-help{color:var(--muted)}#ency-equipment-partner-app .privacy-consent{display:flex;gap:10px;font-size:12px;color:var(--muted);line-height:1.55}#ency-equipment-partner-app .privacy-consent input{width:auto}#ency-equipment-partner-app .phone{background:#101820;color:#fff;border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:10px;position:sticky;top:20px}#ency-equipment-partner-app .phone .consult-label{font-size:12px;color:#72e3c9;font-weight:900}#ency-equipment-partner-app .phone .consult-name{font-size:22px}#ency-equipment-partner-app .phone a{color:#fff;text-decoration:none}#ency-equipment-partner-app .submit-status{margin-top:8px;font-weight:700}#ency-equipment-partner-app .submit-status.success{color:#087d60}#ency-equipment-partner-app .submit-status.error{color:#c53939}
+#ency-equipment-partner-app footer{background:#0b1015;color:#8f9aa3;padding:42px 0;font-size:13px;line-height:1.8}#ency-equipment-partner-app footer strong{color:#fff;display:block;margin-bottom:8px;font-size:16px}
+@media(max-width:980px){#ency-equipment-partner-app .split-head,#ency-equipment-partner-app .exp-grid{grid-template-columns:1fr;gap:28px}#ency-equipment-partner-app .routes{grid-template-columns:1fr}#ency-equipment-partner-app .role-grid{grid-template-columns:1fr}#ency-equipment-partner-app .support-mini{grid-template-columns:repeat(3,1fr)}#ency-equipment-partner-app .process{grid-template-columns:repeat(3,1fr)}#ency-equipment-partner-app .form-wrap{grid-template-columns:1fr}#ency-equipment-partner-app .phone{position:static}#ency-equipment-partner-app .hero{min-height:740px}#ency-equipment-partner-app .proofbar{grid-template-columns:1fr;position:relative;left:auto;bottom:auto;transform:none;margin:-74px auto 0}#ency-equipment-partner-app .proof{border-right:0;border-bottom:1px solid var(--line)}#ency-equipment-partner-app .proof:last-child{border:0}#ency-equipment-partner-app .opportunity{padding-top:90px}#ency-equipment-partner-app .compare{grid-template-columns:1fr}#ency-equipment-partner-app .vs{padding:2px}#ency-equipment-partner-app .quote-foot{grid-template-columns:1fr}#ency-equipment-partner-app .visual-stack{min-height:470px}}
+@media(max-width:640px){#ency-equipment-partner-app .wrap{width:min(100% - 32px,1180px)}#ency-equipment-partner-app .section{padding:74px 0}#ency-equipment-partner-app .hero{min-height:700px}#ency-equipment-partner-app .hero-inner{padding:115px 0 100px}#ency-equipment-partner-app .hero h1{font-size:45px}#ency-equipment-partner-app .hero-sub{font-size:17px}#ency-equipment-partner-app .hero-actions{flex-direction:column;align-items:stretch}#ency-equipment-partner-app .hero-actions .btn{width:100%}#ency-equipment-partner-app .proofbar{width:calc(100% - 32px);border-radius:20px}#ency-equipment-partner-app .split-head{margin-bottom:28px}#ency-equipment-partner-app .h2{font-size:36px}#ency-equipment-partner-app .desc{font-size:16px}#ency-equipment-partner-app .quote-box{padding:30px 20px;border-radius:26px}#ency-equipment-partner-app .support-mini{grid-template-columns:repeat(2,1fr)}#ency-equipment-partner-app .visual-stack{grid-template-columns:1fr;grid-template-rows:220px 160px 160px;min-height:auto}#ency-equipment-partner-app .visual-stack figure:first-child{grid-row:auto}#ency-equipment-partner-app .process{grid-template-columns:1fr}#ency-equipment-partner-app .form{grid-template-columns:1fr;padding:24px}#ency-equipment-partner-app .field:has(textarea),#ency-equipment-partner-app .privacy-consent,#ency-equipment-partner-app .form>.btn,#ency-equipment-partner-app #partnerSubmitStatus{grid-column:auto}#ency-equipment-partner-app .cta-inner{display:block}#ency-equipment-partner-app .cta .btn{margin-top:20px;width:100%}}
 
-}
-@media(max-width:560px){#ency-partner-app .form{padding:28px 20px!important}
-#ency-partner-app .desktop-break{display:none}
+/* V4 comparison emphasis */
+#ency-equipment-partner-app .quote-box{background:#f7f9fb;border:1px solid #e5e9ee;box-shadow:0 18px 55px rgba(12,22,31,.06)}
+#ency-equipment-partner-app .quote-box:after{background:radial-gradient(circle,rgba(1,203,155,.12),rgba(45,84,213,.06) 45%,transparent 68%)}
+#ency-equipment-partner-app .compare{grid-template-columns:1fr 72px 1.08fr}
+#ency-equipment-partner-app .compare-card{background:#fff;border:1px solid #e4e7eb;color:#66717c;box-shadow:none;opacity:.78}
+#ency-equipment-partner-app .compare-card small{color:#9aa3ab}#ency-equipment-partner-app .compare-card h4{color:#68737d}#ency-equipment-partner-app .compare-card .chip{background:#f1f3f5;color:#7b858e}#ency-equipment-partner-app .compare-card .result{border-top:1px solid #e7eaed;color:#7c8790}
+#ency-equipment-partner-app .compare-card.good{opacity:1;background:linear-gradient(145deg,#0d1720,#102538);border:1px solid rgba(64,209,180,.7);color:#fff;box-shadow:0 22px 52px rgba(13,55,75,.22);transform:translateY(-8px)}
+#ency-equipment-partner-app .compare-card.good small{color:#72e3c9}#ency-equipment-partner-app .compare-card.good h4{color:#fff}#ency-equipment-partner-app .compare-card.good .chip{background:rgba(1,203,155,.12);color:#eafffa;border:1px solid rgba(114,227,201,.18)}#ency-equipment-partner-app .compare-card.good .result{border-top-color:rgba(255,255,255,.13);color:#d3dde4}
+#ency-equipment-partner-app .vs{width:48px;height:48px;border-radius:50%;align-self:center;justify-self:center;background:#126bd4;color:#fff;box-shadow:0 10px 26px rgba(18,107,212,.2)}
+#ency-equipment-partner-app .compare-points{display:grid;gap:10px;margin-top:22px}#ency-equipment-partner-app .compare-point{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:750}#ency-equipment-partner-app .compare-point:before{content:"";width:7px;height:7px;border-radius:50%;background:#c3c9cf;flex:0 0 auto}#ency-equipment-partner-app .good .compare-point:before{background:#58d8bd;box-shadow:0 0 0 5px rgba(88,216,189,.08)}
+@media(max-width:980px){#ency-equipment-partner-app .compare{grid-template-columns:1fr}#ency-equipment-partner-app .compare-card.good{transform:none}#ency-equipment-partner-app .vs{margin:0 auto}}
 
-}
-#ency-partner-app .product-links{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:28px}
-#ency-partner-app .product-link{display:inline-flex;align-items:center;gap:9px;padding:5px 0;font-size:14px;font-weight:750;border-bottom:1px solid #111;transition:transform .22s ease}
-#ency-partner-app .product-link.accent{border-bottom-color:#2d54d5;color:#204fb8}
-#ency-partner-app .product-link:hover{transform:translateY(-1px)}
-#ency-partner-app .refined-role .role-steps{justify-content:center;flex-wrap:nowrap}
-#ency-partner-app .refined-role .role-steps span{white-space:nowrap}
-#ency-partner-app .phone{max-width:900px!important;margin:12px auto 0!important;border:1px solid #e0e1e1!important;background:#fff!important;border-radius:18px!important;padding:0!important;display:grid!important;grid-template-columns:110px 1.15fr 1fr 1.25fr!important;align-items:stretch!important;gap:0!important;text-align:left!important;color:#111!important;position:static!important;overflow:hidden!important}
-#ency-partner-app .phone .consult-label, #ency-partner-app .phone .consult-name, #ency-partner-app .phone .contact-line{min-height:58px!important;display:flex!important;align-items:center!important;padding:0 18px!important;margin:0!important}
-#ency-partner-app .phone .consult-label{font-size:12px!important;color:#7a8084!important;background:#f7f8f7!important;font-weight:700!important}
-#ency-partner-app .phone .consult-name{font-size:14px!important;border-left:1px solid #e0e1e1!important}
-#ency-partner-app .phone .contact-line{font-size:13px!important;border-left:1px solid #e0e1e1!important}
-#ency-partner-app .phone .contact-line a{font-size:14px!important;color:#111!important;margin-left:6px!important}
-@media(max-width:980px){#ency-partner-app .refined-role .role-steps{flex-wrap:wrap}
-#ency-partner-app .phone{grid-template-columns:1fr!important}
-#ency-partner-app .phone .consult-label, #ency-partner-app .phone .consult-name, #ency-partner-app .phone .contact-line{min-height:52px!important;border-left:0!important;border-top:1px solid #e0e1e1!important;justify-content:center!important}
-#ency-partner-app .phone .consult-label{border-top:0!important}
-#ency-partner-app .product-links{justify-content:center}
-}
-#ency-partner-app .visual-stack .visual-link{position:absolute;inset:0;display:block;color:inherit;text-decoration:none}
-#ency-partner-app .visual-stack .visual-link img{width:100%;height:100%;object-fit:cover;display:block}
-#ency-partner-app .video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;padding-left:3px;background:rgba(255,255,255,.92);color:#111;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease}
-#ency-partner-app .video-figure:hover .video-play{transform:translate(-50%,-50%) scale(1.06);background:#fff}
-#ency-partner-app .video-figure .visual-link:focus-visible{outline:3px solid #01cb9b;outline-offset:-3px}
-@media (max-width: 900px){#ency-partner-app .proof-bridge, #ency-partner-app .proof-bar, #ency-partner-app .hero-proof, #ency-partner-app .metric-bridge{ margin-top: 28px !important; }
 
+/* ===== V5 refinement: approved copy + main landing design language ===== */
+#ency-equipment-partner-app .hero-inner{text-align:center;padding:118px 0 178px}#ency-equipment-partner-app .hero-copy{max-width:900px;margin:0 auto}#ency-equipment-partner-app .hero h1{font-size:clamp(44px,5.2vw,70px);font-weight:800}#ency-equipment-partner-app .hero h1 .hero-light{font-weight:300}#ency-equipment-partner-app .hero h1 strong{font-weight:800}#ency-equipment-partner-app .hero-sub{margin:26px auto}#ency-equipment-partner-app .hero-actions{justify-content:center}#ency-equipment-partner-app .proofbar{bottom:34px;transform:translateX(-50%);background:rgba(255,255,255,.90);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+#ency-equipment-partner-app .opportunity{padding-top:100px}#ency-equipment-partner-app .opportunity-head{text-align:center;max-width:900px;margin:0 auto 34px}#ency-equipment-partner-app .opportunity-head .h2{font-weight:300}#ency-equipment-partner-app .opportunity-head .desc{margin:16px auto 0}#ency-equipment-partner-app .routes{gap:12px}#ency-equipment-partner-app .route-card,#ency-equipment-partner-app .route-card.featured{min-height:190px;padding:24px;background:#fff;color:var(--ink);border-color:var(--line)}#ency-equipment-partner-app .route-card h3{margin:30px 0 10px;font-size:22px}#ency-equipment-partner-app .route-card p,#ency-equipment-partner-app .route-card.featured p{color:var(--muted)}#ency-equipment-partner-app .route-card.featured:after{display:none}#ency-equipment-partner-app .route-tag{display:inline-flex;font-size:10px;font-weight:850;letter-spacing:.1em;color:var(--blue);padding:7px 9px;background:#eef2ff;border-radius:999px}
+#ency-equipment-partner-app .quote-head{text-align:center;max-width:900px;margin:0 auto}#ency-equipment-partner-app .quote-head .h2 .light-line{font-weight:300}#ency-equipment-partner-app .quote-head .h2 strong{font-weight:700}#ency-equipment-partner-app .quote-head .desc{margin:18px auto 0}#ency-equipment-partner-app .quote-box{margin-top:42px}#ency-equipment-partner-app .compare-slogan{text-align:center;font-size:clamp(22px,2.5vw,34px);line-height:1.35;letter-spacing:-.035em;margin:38px auto 0;max-width:900px;font-weight:300}#ency-equipment-partner-app .compare-slogan strong{font-weight:700}
+#ency-equipment-partner-app .role-head{text-align:center;max-width:900px;margin:0 auto 44px}#ency-equipment-partner-app .role-head .h2{font-weight:300}#ency-equipment-partner-app .role-head .desc{margin:18px auto 0}#ency-equipment-partner-app .refined-role{grid-template-columns:1fr 1fr;margin-top:0}#ency-equipment-partner-app .refined-role .role-card{min-height:190px}#ency-equipment-partner-app .refined-role .role-card:first-child{background:#f3f4f2}#ency-equipment-partner-app .refined-role .role-card.ency{background:linear-gradient(145deg,#eafaf5,#edf2ff);border-color:#cfe6df}#ency-equipment-partner-app .refined-role .role-card h3{margin:0 0 28px;font-size:28px}#ency-equipment-partner-app .support-mini{display:none!important}#ency-equipment-partner-app .support-visual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}#ency-equipment-partner-app .support-visual{height:245px;border-radius:22px;overflow:hidden;position:relative;background:#111}#ency-equipment-partner-app .support-visual .image-slot{position:absolute;inset:0}#ency-equipment-partner-app .support-visual img{width:100%;height:100%;object-fit:cover;display:block}#ency-equipment-partner-app .support-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,7,10,.08),rgba(4,7,10,.82))}#ency-equipment-partner-app .support-visual-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:#fff}#ency-equipment-partner-app .support-visual-copy .num{font-size:10px;opacity:.8}#ency-equipment-partner-app .support-visual-copy h3{font-size:20px;margin:8px 0 6px}#ency-equipment-partner-app .support-visual-copy p{font-size:12px;line-height:1.55;margin:0;color:rgba(255,255,255,.9)}
+#ency-equipment-partner-app .expansion{background:#fff;color:var(--ink)}#ency-equipment-partner-app .expansion .desc{color:var(--muted)}#ency-equipment-partner-app .expansion .product-flow span{border-color:var(--line);background:#fff}#ency-equipment-partner-app .expansion .product-flow i{color:var(--green)}#ency-equipment-partner-app .expansion .apps span{background:#eef0ef;color:#5f676b}#ency-equipment-partner-app .expansion .visual-stack figcaption{color:#fff}#ency-equipment-partner-app .expansion .h2{font-weight:400}
+#ency-equipment-partner-app .join-head{text-align:center;max-width:900px;margin:auto}#ency-equipment-partner-app .join-head .desc{max-width:720px;margin:18px auto 0}#ency-equipment-partner-app .process{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:58px}#ency-equipment-partner-app .process:before{content:"";position:absolute;left:8.33%;right:8.33%;top:19px;height:1px;background:#c8ccce}#ency-equipment-partner-app .step{position:relative;text-align:center;padding:0 9px;min-height:150px;background:transparent;border:0}#ency-equipment-partner-app .step b{position:relative;z-index:1;margin:0 auto 20px;width:40px;height:40px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:11px}#ency-equipment-partner-app .step:last-child b{background:linear-gradient(135deg,var(--green),var(--blue))}#ency-equipment-partner-app .step strong{font-size:14px;display:block;margin:0 0 8px}#ency-equipment-partner-app .step p{font-size:11px;line-height:1.55;color:#858b8f;margin:0}#ency-equipment-partner-app .faq{max-width:920px;margin:62px auto 0;background:#eceeed;border:0;border-radius:30px;padding:24px}#ency-equipment-partner-app .faq-item{background:#f8f9f8;border-radius:16px;margin:7px 0;overflow:hidden;border:1px solid #ddd}#ency-equipment-partner-app .faq-q{padding:18px 20px}#ency-equipment-partner-app .faq-a{padding:0 20px 20px}#ency-equipment-partner-app .faq-item.open{background:#fff}
+#ency-equipment-partner-app .cta-inner{align-items:center}#ency-equipment-partner-app .cta-copy{max-width:820px}#ency-equipment-partner-app .cta h2 .cta-light{font-weight:300}#ency-equipment-partner-app .cta h2 strong{font-weight:800}
+#ency-equipment-partner-app #apply{background:#fff}#ency-equipment-partner-app .apply-head{max-width:980px;margin:0 auto 42px}#ency-equipment-partner-app .apply-head .h2{font-size:clamp(36px,3.3vw,54px)}#ency-equipment-partner-app .apply-head .desc{margin:16px auto 0}#ency-equipment-partner-app .form-wrap{display:block;max-width:900px;margin:auto}#ency-equipment-partner-app .form{display:block;background:#fff;border:1px solid #e0e1e1;border-radius:28px;padding:40px}#ency-equipment-partner-app .field{display:block;margin-bottom:26px}#ency-equipment-partner-app .field label{display:block;font-size:13px;font-weight:650;margin-bottom:9px}#ency-equipment-partner-app .field input,#ency-equipment-partner-app .field textarea{width:100%;border:0;border-bottom:1px solid #cfd2d3;border-radius:0;padding:11px 2px;background:transparent;font:inherit;outline:none}#ency-equipment-partner-app .field textarea{min-height:90px}#ency-equipment-partner-app .options{display:flex;gap:8px;flex-wrap:wrap}#ency-equipment-partner-app .options label{margin:0}#ency-equipment-partner-app .options span{display:inline-flex;padding:10px 14px;border:1px solid #cfd2d3;border-radius:999px}#ency-equipment-partner-app .options input:checked+span{background:#111;color:#fff;border-color:#111}#ency-equipment-partner-app .privacy-consent{margin-bottom:26px}#ency-equipment-partner-app .form>.btn{width:auto}#ency-equipment-partner-app .phone{position:static;background:transparent;color:#747a7e;text-align:center;margin-top:28px;padding:0;display:block}#ency-equipment-partner-app .phone .consult-label{color:#747a7e}#ency-equipment-partner-app .phone .consult-name{display:block;color:#111;font-size:16px;margin:5px 0}#ency-equipment-partner-app .phone a{color:#111}#ency-equipment-partner-app .phone span{margin:0 7px}
+@media(max-width:980px){#ency-equipment-partner-app .hero-inner{padding:100px 0 110px}#ency-equipment-partner-app .proofbar{position:relative;left:auto;bottom:auto;transform:none;margin:-52px auto 0}#ency-equipment-partner-app .support-visual-grid{grid-template-columns:1fr 1fr}#ency-equipment-partner-app .process{grid-template-columns:repeat(3,1fr);gap:34px 0}#ency-equipment-partner-app .process:before{display:none}#ency-equipment-partner-app .cta-inner{align-items:flex-start}#ency-equipment-partner-app .refined-role{grid-template-columns:1fr}}
+@media(max-width:560px){#ency-equipment-partner-app .hero h1{font-size:38px}#ency-equipment-partner-app .support-visual-grid{grid-template-columns:1fr}#ency-equipment-partner-app .process{grid-template-columns:1fr}#ency-equipment-partner-app .form{padding:28px 20px}#ency-equipment-partner-app .cta-inner{display:block}#ency-equipment-partner-app .cta .btn{margin-top:22px}#ency-equipment-partner-app .phone span{display:block;margin:4px 0}}
+
+
+/* ===== V6 refinement overrides ===== */
+#ency-equipment-partner-app .hero{border-bottom:0}
+#ency-equipment-partner-app .proof-bridge{position:relative;z-index:8;background:linear-gradient(to bottom,#111 0 50%,var(--bg) 50% 100%);padding:0}
+#ency-equipment-partner-app .proof-bridge .wrap{position:relative}
+#ency-equipment-partner-app .proofbar{position:relative!important;left:auto!important;bottom:auto!important;transform:none!important;width:100%!important;margin:-58px auto 0!important;background:#fff!important;border:1px solid rgba(255,255,255,.8)!important;box-shadow:0 18px 48px rgba(12,18,24,.13)!important;overflow:hidden}
+#ency-equipment-partner-app .proof{background:#fff}
+#ency-equipment-partner-app .opportunity{padding-top:92px}
+#ency-equipment-partner-app .routes{align-items:stretch}#ency-equipment-partner-app .route-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left}#ency-equipment-partner-app .route-card .route-tag{min-height:26px;display:inline-flex;align-items:center}#ency-equipment-partner-app .route-card h3{margin-top:20px}#ency-equipment-partner-app .route-card p{margin-top:auto;padding-top:12px}
+#ency-equipment-partner-app .compare-slogan{max-width:1100px!important;margin:28px auto 0!important;padding:20px 28px!important;border-radius:18px!important;background:linear-gradient(90deg,#eafaf5,#edf2ff)!important;border:1px solid #cfe6df!important;text-align:center!important;font-size:clamp(16px,1.55vw,20px)!important;line-height:1.5!important;white-space:nowrap;box-shadow:0 10px 28px rgba(24,55,70,.06)}
+#ency-equipment-partner-app .compare-slogan strong{font-weight:850;color:#173a78}
+#ency-equipment-partner-app .refined-role .role-card:first-child{background:#fff!important;border-color:var(--line)!important}
+#ency-equipment-partner-app .refined-role .role-card.ency{position:relative;margin-bottom:30px}
+#ency-equipment-partner-app .refined-role .role-card.ency:after{content:"";position:absolute;left:50%;bottom:-31px;width:1px;height:31px;background:#cfd7d5}
+#ency-equipment-partner-app .support-visual-grid{position:relative;margin-top:0!important;padding-top:30px}
+#ency-equipment-partner-app .support-visual-grid:before{content:"ENCY KOREA PARTNER SUPPORT";position:absolute;top:0;left:50%;transform:translate(-50%,-50%);padding:7px 14px;border:1px solid #d7dddb;border-radius:999px;background:var(--bg);font-size:10px;font-weight:850;letter-spacing:.12em;color:#68716e;z-index:2}
+#ency-equipment-partner-app .support-visual-grid:after{content:"";position:absolute;left:8%;right:8%;top:0;height:1px;background:#cfd7d5}
+#ency-equipment-partner-app .expansion{padding-top:105px}#ency-equipment-partner-app .exp-grid{grid-template-columns:1fr!important;gap:42px!important}#ency-equipment-partner-app .exp-copy{text-align:center;max-width:1080px;margin:0 auto}#ency-equipment-partner-app .exp-copy .h2{max-width:920px;margin:0 auto;font-size:clamp(38px,4.2vw,58px);line-height:1.08}#ency-equipment-partner-app .exp-copy .desc{margin:20px auto 0;max-width:720px}#ency-equipment-partner-app .product-flow{justify-content:center;display:flex!important;align-items:center;gap:10px;flex-wrap:wrap;margin-top:34px}#ency-equipment-partner-app .product-flow span{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:165px}#ency-equipment-partner-app .product-logo-slot{width:30px;height:30px;display:inline-grid;place-items:center;flex:0 0 auto}#ency-equipment-partner-app .product-logo-slot img{width:100%;height:100%;object-fit:contain;display:block}#ency-equipment-partner-app .apps{justify-content:center}#ency-equipment-partner-app .visual-stack{max-width:980px;width:100%;margin:0 auto}
+#ency-equipment-partner-app #join{background:#eef0ef!important;border-top:1px solid #e0e3e2;border-bottom:1px solid #e0e3e2;padding-top:105px;padding-bottom:105px}#ency-equipment-partner-app .join-head{max-width:900px}#ency-equipment-partner-app .process{max-width:900px;margin:66px auto 0!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;grid-template-areas:"s1 s2 s3" "s6 s5 s4"!important;column-gap:70px!important;row-gap:86px!important;position:relative;padding:0 0 2px}#ency-equipment-partner-app .process:before{display:none!important}#ency-equipment-partner-app .process-path{position:absolute;left:0;top:0;width:calc(100% + 64px);height:calc(100% - 1px);overflow:visible;z-index:0;pointer-events:none}#ency-equipment-partner-app .process-path .route{fill:none;stroke:#c9cdcc;stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}#ency-equipment-partner-app .process-path .arrow{fill:#9ea5a3;stroke:none}#ency-equipment-partner-app .process .step{position:relative;z-index:1;border:0!important;padding:0!important;min-height:150px;background:transparent!important;text-align:left}#ency-equipment-partner-app .process .step:nth-of-type(1){grid-area:s1}#ency-equipment-partner-app .process .step:nth-of-type(2){grid-area:s2}#ency-equipment-partner-app .process .step:nth-of-type(3){grid-area:s3}#ency-equipment-partner-app .process .step:nth-of-type(4){grid-area:s4}#ency-equipment-partner-app .process .step:nth-of-type(5){grid-area:s5}#ency-equipment-partner-app .process .step:nth-of-type(6){grid-area:s6}#ency-equipment-partner-app .process .step b{margin:0 0 18px!important;width:40px;height:40px;background:#111;box-shadow:0 0 0 10px #eef0ef;position:relative;z-index:3}#ency-equipment-partner-app .process .step:last-of-type b{background:linear-gradient(135deg,var(--green),var(--blue))}#ency-equipment-partner-app .process .step:nth-of-type(2) b,#ency-equipment-partner-app .process .step:nth-of-type(5) b{margin-left:auto!important;margin-right:auto!important}#ency-equipment-partner-app .process .step:nth-of-type(3) b,#ency-equipment-partner-app .process .step:nth-of-type(4) b{margin-left:auto!important}#ency-equipment-partner-app .process .step:nth-of-type(2),#ency-equipment-partner-app .process .step:nth-of-type(5){text-align:center}#ency-equipment-partner-app .process .step:nth-of-type(3),#ency-equipment-partner-app .process .step:nth-of-type(4){text-align:right}#ency-equipment-partner-app .faq{background:#e3e6e5!important}
+#ency-equipment-partner-app .phone{max-width:900px;margin:12px auto 0!important;border:1px solid #e0e1e1;background:#fff;border-radius:18px;padding:16px 22px!important;display:flex;align-items:center;justify-content:center;gap:18px;text-align:left!important;color:#111!important;position:static!important}#ency-equipment-partner-app .phone .consult-label{font-size:12px;color:#7a8084}#ency-equipment-partner-app .phone .consult-name{margin:0!important;font-size:14px!important}#ency-equipment-partner-app .phone .contact-line{display:inline-flex!important;align-items:center;margin:0!important;padding-left:18px;border-left:1px solid #e0e1e1}#ency-equipment-partner-app .phone .contact-line a{font-size:14px!important}
+@media(max-width:980px){#ency-equipment-partner-app .compare-slogan{white-space:normal}#ency-equipment-partner-app .product-flow{display:grid!important;grid-template-columns:1fr!important}#ency-equipment-partner-app .product-flow>i{text-align:center;transform:rotate(90deg)}#ency-equipment-partner-app .product-flow span{width:100%}#ency-equipment-partner-app .process{grid-template-columns:1fr!important;grid-template-areas:none!important;row-gap:24px!important}#ency-equipment-partner-app .process-path{display:none}#ency-equipment-partner-app .process .step{grid-area:auto!important;text-align:center!important;min-height:auto}#ency-equipment-partner-app .process .step b{margin:0 auto 14px!important}#ency-equipment-partner-app .phone{flex-direction:column;gap:7px;text-align:center!important}#ency-equipment-partner-app .phone .contact-line{border-left:0;padding-left:0}#ency-equipment-partner-app .proof-bridge{background:var(--bg)}#ency-equipment-partner-app .proofbar{margin:-36px auto 0!important}}
+
+
+
+/* ===== V7: user-requested polish + exact main-page form/process behavior ===== */
+/* Sales route copy alignment */
+#ency-equipment-partner-app .routes .route-card p{margin-top:0!important;padding-top:0!important}
+#ency-equipment-partner-app .routes .route-card h3{min-height:54px;margin-bottom:10px!important}
+#ency-equipment-partner-app .route-copy-first{line-height:1.7}
+
+/* Comparison: de-emphasize the legacy high-priced CAM card */
+#ency-equipment-partner-app .compare-card:not(.good){transform:scale(.94);transform-origin:center right;opacity:.78;padding:24px}
+#ency-equipment-partner-app .compare-card:not(.good) h4{font-size:23px}
+#ency-equipment-partner-app .compare-card.good{position:relative;z-index:2}
+
+/* Role section */
+#ency-equipment-partner-app .role-head .h2 strong{font-weight:760}
+#ency-equipment-partner-app .refined-role{align-items:stretch}
+#ency-equipment-partner-app .refined-role .role-card{min-height:220px!important;height:100%;display:flex;flex-direction:column;justify-content:flex-start;text-align:center}
+#ency-equipment-partner-app .refined-role .role-card h3{text-align:center;margin:0 0 28px!important}
+#ency-equipment-partner-app .refined-role .role-steps{justify-content:center}
+#ency-equipment-partner-app .refined-role .role-card.ency{margin-bottom:0!important}
+#ency-equipment-partner-app .refined-role .role-card.ency:after{display:none!important;content:none!important}
+#ency-equipment-partner-app .support-visual-grid{padding-top:26px!important;margin-top:20px!important}
+#ency-equipment-partner-app .support-visual-grid:before,#ency-equipment-partner-app .support-visual-grid:after{display:none!important;content:none!important}
+
+/* Main-page form: reuse the same compact single-column treatment */
+#ency-equipment-partner-app #apply{background:#fff}
+#ency-equipment-partner-app .form-wrap{display:block!important;max-width:900px!important;margin:auto!important}
+#ency-equipment-partner-app .form{display:block!important;background:#fff!important;border:1px solid #e0e1e1!important;border-radius:28px!important;padding:40px!important}
+#ency-equipment-partner-app .field{display:block!important;margin-bottom:26px!important}
+#ency-equipment-partner-app .field label{display:block!important;font-size:13px!important;font-weight:650!important;margin-bottom:9px!important}
+#ency-equipment-partner-app .field input,#ency-equipment-partner-app .field textarea{width:100%!important;border:0!important;border-bottom:1px solid #cfd2d3!important;border-radius:0!important;padding:11px 2px!important;background:transparent!important;font:inherit!important;outline:none!important}
+#ency-equipment-partner-app .field textarea{min-height:90px!important}
+#ency-equipment-partner-app .options{display:flex!important;gap:8px!important;flex-wrap:wrap!important;justify-content:flex-start!important}
+#ency-equipment-partner-app .options label{margin:0!important;flex:0 0 auto!important}
+#ency-equipment-partner-app .options span{display:inline-flex!important;padding:10px 14px!important;border:1px solid #cfd2d3!important;border-radius:999px!important}
+#ency-equipment-partner-app .options input:checked+span{background:#111!important;color:#fff!important;border-color:#111!important}
+#ency-equipment-partner-app .privacy-consent{margin:0 0 34px 0!important}
+#ency-equipment-partner-app .form>.btn{width:auto!important;margin-top:0!important}
+#ency-equipment-partner-app .phone{max-width:900px;margin:12px auto 0!important;border:1px solid #e0e1e1!important;background:#fff!important;border-radius:18px!important;padding:16px 22px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:18px!important;text-align:left!important;color:#111!important;position:static!important}
+#ency-equipment-partner-app .phone .consult-label{font-size:12px!important;color:#7a8084!important}
+#ency-equipment-partner-app .phone .consult-name{margin:0!important;font-size:14px!important;color:#111!important}
+#ency-equipment-partner-app .phone .contact-line{display:inline-flex!important;align-items:center!important;margin:0!important;padding-left:18px!important;border-left:1px solid #e0e1e1!important}
+#ency-equipment-partner-app .phone .contact-line a{font-size:14px!important;color:#111!important}
+
+/* Mobile process: exact main-page vertical rail behavior */
+@media(max-width:980px){
+  #ency-equipment-partner-app .compare-card:not(.good){transform:none;opacity:.72}
+  #ency-equipment-partner-app .process{display:flex!important;flex-direction:column!important;gap:0!important;margin-top:42px!important;padding-left:0!important;max-width:620px!important;background-image:linear-gradient(#d8dcde,#d8dcde)!important;background-repeat:no-repeat!important;background-size:1px calc(100% - 80px)!important;background-position:20px 20px!important}
+  #ency-equipment-partner-app .process-path{display:none!important}
+  #ency-equipment-partner-app .process .step:nth-of-type(n){position:relative!important;display:grid!important;grid-template-columns:40px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:18px!important;min-height:112px!important;padding:0 0 28px!important;text-align:left!important;background:transparent!important}
+  #ency-equipment-partner-app .process .step:nth-of-type(n):after{display:none!important;content:none!important}
+  #ency-equipment-partner-app .process .step b{grid-column:1!important;grid-row:1/3!important;margin:0!important;width:40px!important;height:40px!important;box-shadow:0 0 0 7px #eef0ef!important;position:relative!important;z-index:3!important}
+  #ency-equipment-partner-app .process .step strong{grid-column:2!important;grid-row:1!important;margin:2px 0 7px!important;align-self:start!important;text-align:left!important}
+  #ency-equipment-partner-app .process .step p{grid-column:2!important;grid-row:2!important;margin:0!important;align-self:start!important;text-align:left!important}
+  #ency-equipment-partner-app .process .step:last-of-type b{background:linear-gradient(135deg,var(--green),var(--blue))!important}
 }
-#ency-partner-app .role-card, #ency-partner-app .role-box, #ency-partner-app .responsibility-card{ min-height: 0 !important; height: auto !important; padding-bottom: 24px !important; }
-#ency-partner-app .role-cards, #ency-partner-app .role-grid, #ency-partner-app .responsibility-grid{ align-items: stretch !important; }
-#ency-partner-app .role-card > :last-child, #ency-partner-app .role-box > :last-child, #ency-partner-app .responsibility-card > :last-child{ margin-bottom: 0 !important; }
-#ency-partner-app .product-link, #ency-partner-app .product-links a, #ency-partner-app .product-actions a{
+@media(max-width:700px){
+  #ency-equipment-partner-app .phone{flex-direction:column!important;gap:7px!important;text-align:center!important}
+  #ency-equipment-partner-app .phone .contact-line{border-left:0!important;padding-left:0!important}
+}
+@media(max-width:560px){
+  #ency-equipment-partner-app .form{padding:28px 20px!important}
+  #ency-equipment-partner-app .desktop-break{display:none}
+}
+
+
+/* ===== V8 user refinements ===== */
+#ency-equipment-partner-app .product-links{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:28px}
+#ency-equipment-partner-app .product-link{display:inline-flex;align-items:center;gap:9px;padding:5px 0;font-size:14px;font-weight:750;border-bottom:1px solid #111;transition:transform .22s ease}
+#ency-equipment-partner-app .product-link.accent{border-bottom-color:#2d54d5;color:#204fb8}
+#ency-equipment-partner-app .product-link:hover{transform:translateY(-1px)}
+/* Keep both role cards as one-line capability rows on desktop. */
+#ency-equipment-partner-app .refined-role .role-steps{justify-content:center;flex-wrap:nowrap}
+#ency-equipment-partner-app .refined-role .role-steps span{white-space:nowrap}
+/* Contact strip: same horizontal table language as the main partner page, with explicit cells. */
+#ency-equipment-partner-app .phone{max-width:900px!important;margin:12px auto 0!important;border:1px solid #e0e1e1!important;background:#fff!important;border-radius:18px!important;padding:0!important;display:grid!important;grid-template-columns:110px 1.15fr 1fr 1.25fr!important;align-items:stretch!important;gap:0!important;text-align:left!important;color:#111!important;position:static!important;overflow:hidden!important}
+#ency-equipment-partner-app .phone .consult-label,#ency-equipment-partner-app .phone .consult-name,#ency-equipment-partner-app .phone .contact-line{min-height:58px!important;display:flex!important;align-items:center!important;padding:0 18px!important;margin:0!important}
+#ency-equipment-partner-app .phone .consult-label{font-size:12px!important;color:#7a8084!important;background:#f7f8f7!important;font-weight:700!important}
+#ency-equipment-partner-app .phone .consult-name{font-size:14px!important;border-left:1px solid #e0e1e1!important}
+#ency-equipment-partner-app .phone .contact-line{font-size:13px!important;border-left:1px solid #e0e1e1!important}
+#ency-equipment-partner-app .phone .contact-line a{font-size:14px!important;color:#111!important;margin-left:6px!important}
+@media(max-width:980px){#ency-equipment-partner-app .refined-role .role-steps{flex-wrap:wrap}#ency-equipment-partner-app .phone{grid-template-columns:1fr!important}#ency-equipment-partner-app .phone .consult-label,#ency-equipment-partner-app .phone .consult-name,#ency-equipment-partner-app .phone .contact-line{min-height:52px!important;border-left:0!important;border-top:1px solid #e0e1e1!important;justify-content:center!important}#ency-equipment-partner-app .phone .consult-label{border-top:0!important}#ency-equipment-partner-app .product-links{justify-content:center}}
+
+
+#ency-equipment-partner-app .visual-stack .visual-link{position:absolute;inset:0;display:block;color:inherit;text-decoration:none}
+#ency-equipment-partner-app .visual-stack .visual-link img{width:100%;height:100%;object-fit:cover;display:block}
+#ency-equipment-partner-app .video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;padding-left:3px;background:rgba(255,255,255,.92);color:#111;font-size:18px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease}
+#ency-equipment-partner-app .video-figure:hover .video-play{transform:translate(-50%,-50%) scale(1.06);background:#fff}
+#ency-equipment-partner-app .video-figure .visual-link:focus-visible{outline:3px solid #01cb9b;outline-offset:-3px}
+
+
+/* ===== V9 final polish ===== */
+/* 1) Mobile: add breathing room above the TOTAL COST / QUOTE / S/W SUPPORT bridge */
+@media (max-width: 900px){
+  #ency-equipment-partner-app .proof-bridge,#ency-equipment-partner-app .proof-bar,#ency-equipment-partner-app .hero-proof,#ency-equipment-partner-app .metric-bridge{ margin-top: 28px !important; }
+}
+
+/* 2) Role cards: remove excessive bottom whitespace while keeping equal heights */
+#ency-equipment-partner-app .role-card,#ency-equipment-partner-app .role-box,#ency-equipment-partner-app .responsibility-card{ min-height: 0 !important; height: auto !important; padding-bottom: 24px !important; }
+#ency-equipment-partner-app .role-cards,#ency-equipment-partner-app .role-grid,#ency-equipment-partner-app .responsibility-grid{ align-items: stretch !important; }
+#ency-equipment-partner-app .role-card > :last-child,#ency-equipment-partner-app .role-box > :last-child,#ency-equipment-partner-app .responsibility-card > :last-child{ margin-bottom: 0 !important; }
+
+/* 3) Product links: remove text underline/bottom-border so only the section divider remains */
+#ency-equipment-partner-app .product-link,#ency-equipment-partner-app .product-links a,#ency-equipment-partner-app .product-actions a{
   text-decoration: none !important;
   border-bottom: 0 !important;
   box-shadow: none !important;
 }
-#ency-partner-app .refined-role .role-card{
+
+
+/* V11 final role-card spacing polish */
+#ency-equipment-partner-app .refined-role .role-card{
   min-height:0!important;
   height:auto!important;
   padding:28px 30px 24px!important;
 }
-#ency-partner-app .refined-role .role-card h3{margin:0 0 20px!important}
-#ency-partner-app .refined-role .role-steps{margin-bottom:0!important}
-@media(max-width:700px){#ency-partner-app .refined-role .role-card{padding:24px 20px 21px!important}
-#ency-partner-app .refined-role .role-card h3{margin-bottom:17px!important}
-
+#ency-equipment-partner-app .refined-role .role-card h3{margin:0 0 20px!important}
+#ency-equipment-partner-app .refined-role .role-steps{margin-bottom:0!important}
+@media(max-width:700px){
+  #ency-equipment-partner-app .refined-role .role-card{padding:24px 20px 21px!important}
+  #ency-equipment-partner-app .refined-role .role-card h3{margin-bottom:17px!important}
 }
-
