@@ -1,13 +1,13 @@
 (() => {
-  'use strict';
+'use strict';
 
-  const LANDING_PATH = '/equipment_partner';
-  const PAGE_ID = 'page2762370';
-  const ROOT_ID = 'ency-partner-app';
-  const ACTIVE_CLASS = 'ency-equipment-partner-active';
-  const WEBHOOK_URL = 'https://hook.us2.make.com/liaghxhcen4vg55rg57xwbrjxpeoq3f2';
-
-  const LANDING_HTML = `<section class="hero">
+const TARGET_PATH='/equipment_partner';
+const PAGE_ID='page2762370';
+const PLACEHOLDER_SECTION_ID='section17411261';
+const ROOT_ID='ency-partner-app';
+const ACTIVE_CLASS='ency-equipment-partner-active';
+const WEBHOOK_URL='https://hook.us2.make.com/liaghxhcen4vg55rg57xwbrjxpeoq3f2';
+const LANDING_HTML=`<section class="hero">
   <div class="hero-bg" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner"><div class="hero-copy">
     <h1><span class="hero-light">장비값, 또 깎으실 건가요?</span><br><strong>이번엔 CAM으로 풀어보세요.</strong></h1>
@@ -112,189 +112,150 @@
   <aside class="phone"><span class="consult-label">유선 상담</span><strong class="consult-name">김유천 대표이사</strong><span class="contact-line">📱 <a href="tel:01091819077">010-9181-9077</a></span><span class="contact-line">✉️ <a href="mailto:yc@ycgroup.co.kr">yc@ycgroup.co.kr</a></span></aside></div>
 </div></section>`;
 
-  let scheduled = false;
+let mountedPage=null;
+let scheduled=false;
 
-  function currentPath() {
-    const path = window.location.pathname || '/';
-    return path.length > 1 ? path.replace(/\/+$/, '') : path;
-  }
+function pathNow(){
+  const p=location.pathname||'/';
+  return p.length>1?p.replace(/\/+$/,''):p;
+}
 
-  function isTargetRoute() {
-    return currentPath() === LANDING_PATH;
-  }
+function restore(){
+  const root=document.getElementById(ROOT_ID);
+  if(root) root.remove();
+  document.querySelectorAll('.'+ACTIVE_CLASS).forEach(el=>el.classList.remove(ACTIVE_CLASS));
+  mountedPage=null;
+}
 
-  function getTargetPage() {
-    return document.getElementById(PAGE_ID);
-  }
+function formatPhone(v){
+  let d=String(v||'').replace(/\D/g,'').slice(0,11);
+  if(d.length<=3)return d;
+  if(d.length<=7)return d.slice(0,3)+'-'+d.slice(3);
+  if(d.length===10)return d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6);
+  return d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7);
+}
 
-  function cleanup() {
-    const root = document.getElementById(ROOT_ID);
-    if (root) root.remove();
-
-    const page = getTargetPage();
-    if (page) page.classList.remove(ACTIVE_CLASS);
-  }
-
-  function formatKoreanMobile(value) {
-    let d = String(value || '').replace(/\D/g, '').slice(0, 11);
-    if (d.length <= 3) return d;
-    if (d.length <= 7) return d.slice(0, 3) + '-' + d.slice(3);
-    if (d.length === 10) return d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
-    return d.slice(0, 3) + '-' + d.slice(3, 7) + '-' + d.slice(7);
-  }
-
-  function bindLandingEvents(root) {
-    root.querySelectorAll('.faq-q').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        root.querySelectorAll('.faq-item').forEach((x) => {
-          if (x !== item) {
-            x.classList.remove('open');
-            const icon = x.querySelector('.faq-q span:last-child');
-            if (icon) icon.textContent = '+';
-          }
-        });
-        item.classList.toggle('open');
-        const icon = btn.querySelector('span:last-child');
-        if (icon) icon.textContent = item.classList.contains('open') ? '×' : '+';
-      });
+function bind(root){
+  root.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    root.querySelectorAll('.faq-item').forEach(x=>{
+      if(x!==item){x.classList.remove('open');const ic=x.querySelector('.faq-q span:last-child');if(ic)ic.textContent='+';}
     });
+    item.classList.toggle('open');
+    const ic=btn.querySelector('span:last-child');
+    if(ic)ic.textContent=item.classList.contains('open')?'×':'+';
+  }));
 
-    const form = root.querySelector('#partnerApplicationForm');
-    const phone = root.querySelector('#partnerPhone');
-    const submitButton = root.querySelector('#partnerSubmitButton');
-    const status = root.querySelector('#partnerSubmitStatus');
-    if (!form || !phone || !submitButton || !status) return;
+  const form=root.querySelector('#partnerApplicationForm');
+  const phone=root.querySelector('#partnerPhone');
+  const submit=root.querySelector('#partnerSubmitButton');
+  const status=root.querySelector('#partnerSubmitStatus');
+  if(!form||!phone||!submit||!status)return;
 
-    phone.addEventListener('input', function () {
-      this.value = formatKoreanMobile(this.value);
-    });
-    phone.addEventListener('blur', function () {
-      this.value = formatKoreanMobile(this.value);
-    });
+  phone.addEventListener('input',()=>phone.value=formatPhone(phone.value));
+  phone.addEventListener('blur',()=>phone.value=formatPhone(phone.value));
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    const privacy=root.querySelector('#privacyAgree');
+    if(!privacy||!privacy.checked){if(privacy)privacy.focus();return;}
+    if(submit.disabled)return;
 
-      const privacy = root.querySelector('#privacyAgree');
-      if (!privacy || !privacy.checked) {
-        if (privacy) privacy.focus();
-        return;
-      }
+    phone.value=formatPhone(phone.value);
+    const d=new FormData(form);
+    const payload={
+      name:String(d.get('name')||'').trim(),
+      phone:phone.value,
+      email:String(d.get('email')||'').trim(),
+      partner_type:String(d.get('partner_type')||''),
+      company:String(d.get('company')||'').trim(),
+      region:String(d.get('region')||'').trim(),
+      job:String(d.get('job')||'').trim(),
+      sales_experience:String(d.get('sales_experience')||'').trim(),
+      customer_group:String(d.get('customer_group')||'').trim(),
+      current_products:String(d.get('current_products')||'').trim(),
+      inquiry:String(d.get('inquiry')||'').trim(),
+      privacy_agree:true
+    };
 
-      phone.value = formatKoreanMobile(phone.value);
-      const d = new FormData(form);
-      const payload = {
-        name: String(d.get('name') || '').trim(),
-        phone: phone.value,
-        email: String(d.get('email') || '').trim(),
-        partner_type: String(d.get('partner_type') || ''),
-        company: String(d.get('company') || '').trim(),
-        region: String(d.get('region') || '').trim(),
-        job: String(d.get('job') || '').trim(),
-        sales_experience: String(d.get('sales_experience') || '').trim(),
-        customer_group: String(d.get('customer_group') || '').trim(),
-        current_products: String(d.get('current_products') || '').trim(),
-        inquiry: String(d.get('inquiry') || '').trim(),
-        privacy_agree: true
-      };
-
-      if (submitButton.disabled) return;
-      submitButton.disabled = true;
-      submitButton.textContent = '전송 중...';
-      status.className = '';
-      status.textContent = '';
-
-      try {
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (!response.ok) throw new Error('Webhook request failed: ' + response.status);
-
-        form.reset();
-        status.className = 'submit-status success';
-        status.textContent = '신청이 접수됐습니다. 담당자가 확인 후 연락드리겠습니다.';
-        submitButton.textContent = '신청 완료';
-      } catch (error) {
-        console.error(error);
-        status.className = 'submit-status error';
-        status.textContent = '신청 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
-        submitButton.disabled = false;
-        submitButton.textContent = '파트너 상담 신청';
-      }
-    });
-  }
-
-  function render() {
-    if (!isTargetRoute()) {
-      cleanup();
-      return;
+    submit.disabled=true; submit.textContent='전송 중...'; status.className=''; status.textContent='';
+    try{
+      const r=await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(!r.ok)throw new Error('Webhook '+r.status);
+      form.reset();
+      status.className='submit-status success';
+      status.textContent='신청이 접수됐습니다. 담당자가 확인 후 연락드리겠습니다.';
+      submit.textContent='신청 완료';
+    }catch(err){
+      console.error(err);
+      status.className='submit-status error';
+      status.textContent='신청 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+      submit.disabled=false; submit.textContent='파트너 상담 신청';
     }
+  });
+}
 
-    const page = getTargetPage();
-    if (!page) {
-      cleanup();
-      return;
-    }
+function mount(){
+  if(pathNow()!==TARGET_PATH){restore();return;}
+  const page=document.getElementById(PAGE_ID);
+  if(!page){restore();return;}
 
-    // 다른 위치에 남은 중복 root 방지
-    document.querySelectorAll('#' + ROOT_ID).forEach((node) => {
-      if (node.parentElement !== page) node.remove();
-    });
+  // Remove stale/duplicate roots first.
+  document.querySelectorAll('#'+ROOT_ID).forEach(n=>n.remove());
 
-    let root = page.querySelector(':scope > #' + ROOT_ID);
-    if (!root) {
-      root = document.createElement('div');
-      root.id = ROOT_ID;
-      root.innerHTML = LANDING_HTML;
-      page.appendChild(root);
-      bindLandingEvents(root);
-    }
+  const root=document.createElement('div');
+  root.id=ROOT_ID;
+  root.innerHTML=LANDING_HTML;
 
+  // IMPORTANT: root is inserted as a SIBLING of the Sixshop page,
+  // immediately before it. It is NOT appended inside #page2762370.
+  // Therefore hiding the placeholder section can never hide the landing itself.
+  page.parentNode.insertBefore(root,page);
+
+  bind(root);
+  page.classList.add(ACTIVE_CLASS);
+  mountedPage=page;
+}
+
+function reconcile(){
+  const correct=pathNow()===TARGET_PATH;
+  const page=document.getElementById(PAGE_ID);
+  const root=document.getElementById(ROOT_ID);
+
+  if(!correct||!page){restore();return;}
+  if(root && mountedPage===page){
     page.classList.add(ACTIVE_CLASS);
+    return;
   }
+  restore();
+  mount();
+}
 
-  function scheduleRender() {
-    if (scheduled) return;
-    scheduled = true;
-    window.requestAnimationFrame(() => {
-      scheduled = false;
-      render();
-    });
+function schedule(){
+  if(scheduled)return;
+  scheduled=true;
+  requestAnimationFrame(()=>{scheduled=false;reconcile();});
+}
+
+['pushState','replaceState'].forEach(method=>{
+  const orig=history[method];
+  if(!orig||orig.__encyEquipmentPatched)return;
+  function patched(){
+    const r=orig.apply(this,arguments);
+    dispatchEvent(new Event('ency-equipment-locationchange'));
+    return r;
   }
+  patched.__encyEquipmentPatched=true;
+  history[method]=patched;
+});
 
-  function patchHistory(method) {
-    const original = history[method];
-    if (typeof original !== 'function' || original.__encyPatched) return;
+addEventListener('popstate',schedule);
+addEventListener('hashchange',schedule);
+addEventListener('ency-equipment-locationchange',schedule);
 
-    function patchedHistory() {
-      const result = original.apply(this, arguments);
-      window.dispatchEvent(new Event('ency:locationchange'));
-      return result;
-    }
-    patchedHistory.__encyPatched = true;
-    history[method] = patchedHistory;
-  }
+new MutationObserver(schedule).observe(document.documentElement,{childList:true,subtree:true});
 
-  patchHistory('pushState');
-  patchHistory('replaceState');
-
-  window.addEventListener('popstate', scheduleRender);
-  window.addEventListener('hashchange', scheduleRender);
-  window.addEventListener('ency:locationchange', scheduleRender);
-
-  const observer = new MutationObserver(scheduleRender);
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', scheduleRender, { once: true });
-  } else {
-    scheduleRender();
-  }
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',schedule,{once:true});
+else schedule();
 })();
