@@ -1,3 +1,13 @@
+/* ENCY Equipment Partner — SAFE Sixshop CSS
+   This stylesheet never hides Sixshop body/header/footer/page containers. */
+#ency-partner-app{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  width:100% !important;
+}
+#ency-partner-app, #ency-partner-app *{box-sizing:border-box}
 /* ENCY Equipment Partner — Sixshop scoped stylesheet
    Loader architecture matches the working ENCY Partner Program deployment. */
 #ency-partner-app{--bg:#f5f6f4;--paper:#fff;--ink:#101214;--muted:#697075;--line:#e1e3e2;--green:#01cb9b;--blue:#2d54d5;--r:26px}
