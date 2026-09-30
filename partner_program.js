@@ -3,6 +3,8 @@
   'use strict';
   var PAGE_ID='page2762370';
   var ROOT_ID='ency-equipment-partner-app';
+  var TARGET_PATH='/equipment_partner';
+  var ROUTE_CLASS='ency-equipment-partner-route';
   var WEBHOOK='https://hook.us2.make.com/liaghxhcen4vg55rg57xwbrjxpeoq3f2';
   var landingHTML=`<section class="hero">
   <div class="hero-bg" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
@@ -108,15 +110,26 @@
   </form>
   <aside class="phone"><span class="consult-label">유선 상담</span><strong class="consult-name">김유천 대표이사</strong><span class="contact-line">📱 <a href="tel:01091819077">010-9181-9077</a></span><span class="contact-line">✉️ <a href="mailto:yc@ycgroup.co.kr">yc@ycgroup.co.kr</a></span></aside></div>
 </div></section>`;
+  function normalizePath(path){var p=String(path||'/').replace(/\/+$/,'');return p||'/';}
+  function isTargetRoute(){return normalizePath(window.location.pathname)===TARGET_PATH;}
   function q(sel,ctx){return (ctx||document).querySelector(sel);}
   function qa(sel,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(sel));}
+  function restore(){
+    document.documentElement.classList.remove(ROUTE_CLASS);
+    var page=document.getElementById(PAGE_ID); if(page)page.classList.remove('ency-equipment-source-hidden');
+    var root=document.getElementById(ROOT_ID); if(root)root.remove();
+  }
   function mount(){
+    if(!isTargetRoute()){restore();return false;}
     var page=document.getElementById(PAGE_ID);
-    if(!page || document.getElementById(ROOT_ID)) return false;
+    if(!page) return false;
+    document.documentElement.classList.add(ROUTE_CLASS);
     page.classList.add('ency-equipment-source-hidden');
+    if(document.getElementById(ROOT_ID)) return true;
     var root=document.createElement('div'); root.id=ROOT_ID; root.innerHTML=landingHTML;
     page.parentNode.insertBefore(root,page); init(root); return true;
   }
+  function reconcile(){if(isTargetRoute())mount();else restore();}
   function init(root){
     qa('.faq-q',root).forEach(function(btn){btn.addEventListener('click',function(){
       var item=btn.parentElement;
@@ -137,8 +150,9 @@
       catch(error){console.error(error);submitting=false;status.className='submit-status error';status.textContent='신청 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';submitButton.disabled=false;submitButton.textContent='파트너 상담 신청';}
     });
   }
-  if(!mount()){
-    var observer=new MutationObserver(function(){if(mount())observer.disconnect();});
-    observer.observe(document.documentElement,{childList:true,subtree:true}); setTimeout(function(){observer.disconnect();},15000);
-  }
+  reconcile();
+  var observer=new MutationObserver(function(){reconcile();});
+  observer.observe(document.documentElement,{childList:true,subtree:true});
+  var lastPath=normalizePath(window.location.pathname);
+  setInterval(function(){var now=normalizePath(window.location.pathname);if(now!==lastPath){lastPath=now;reconcile();}},250);
 })();
