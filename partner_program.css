@@ -1,11 +1,20 @@
-/* ENCY Equipment Partner - Sixshop isolated CSS */
-#ency-partner-app,
-#ency-partner-app * { box-sizing: border-box; }
+/* ENCY Equipment Partner — Sixshop isolated stylesheet */
+#ency-partner-app{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:1 !important;
+  width:100% !important;
+  min-height:100vh !important;
+}
+#ency-partner-app, #ency-partner-app *{box-sizing:border-box}
+#ency-partner-app main{display:block !important}
 
-/* Hide ONLY the placeholder section after JS has mounted the landing.
-   Header, navigation, footer and the page container itself remain untouched. */
-#page2762370.ency-equipment-partner-active #section17411261 {
-  display: none !important;
+/* Hide only the blank Sixshop content section on the equipment-partner page.
+   Do NOT hide #page2762370 or arbitrary body children. */
+body.ency-equipment-partner-mounted #section17411261{
+  display:none !important;
 }
 
 #ency-partner-app{--bg:#f5f6f4;--paper:#fff;--ink:#101214;--muted:#697075;--line:#e1e3e2;--green:#01cb9b;--blue:#2d54d5;--dark:#080d13;--dark2:#101923;--r:26px;--shadow:0 20px 60px rgba(12,22,31,.09)}
