@@ -6,6 +6,11 @@
   var TARGET_PATH='/equipment_partner';
   var ROUTE_CLASS='ency-equipment-partner-route';
   var WEBHOOK='https://hook.us2.make.com/liaghxhcen4vg55rg57xwbrjxpeoq3f2';
+  var UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var UTM_STORAGE_KEY='ency_partner_first_utm';
+  function captureFirstUtm(){try{var params=new URLSearchParams(window.location.search),incoming={},hasUtm=false;UTM_KEYS.forEach(function(key){var value=String(params.get(key)||'').trim();incoming[key]=value;if(value)hasUtm=true;});if(hasUtm&&!sessionStorage.getItem(UTM_STORAGE_KEY)){sessionStorage.setItem(UTM_STORAGE_KEY,JSON.stringify(incoming));}}catch(e){}}
+  function getFirstUtm(){var empty={utm_source:'',utm_medium:'',utm_campaign:'',utm_content:'',utm_term:''};try{var raw=sessionStorage.getItem(UTM_STORAGE_KEY);if(!raw)return empty;var saved=JSON.parse(raw)||{};UTM_KEYS.forEach(function(key){empty[key]=String(saved[key]||'');});}catch(e){}return empty;}
+
   var landingHTML=`<section class="hero">
   <div class="hero-bg" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner"><div class="hero-copy">
@@ -97,7 +102,7 @@
     <div class="field"><label>이름 *</label><input name="name" placeholder="이름을 입력해주세요" required></div>
     <div class="field"><label>연락처 *</label><input name="phone" id="partnerPhone" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-0000-0000" required></div>
     <div class="field"><label>이메일 *</label><input name="email" placeholder="email@example.com" required type="email"></div>
-    <div class="field"><label>파트너 유형 *</label><div class="options"><label><input name="partner_type" required type="radio" value="개인 파트너"><span>개인 파트너</span></label><label><input name="partner_type" required type="radio" value="사업자 파트너"><span>사업자 파트너</span></label></div></div>
+    <div class="field"><label>파트너 유형 *</label><div class="options"><label><input name="partner_type" required type="radio" value="개인 파트너"><span>개인 파트너</span></label><label><input name="partner_type" required type="radio" value="사업자 파트너"><span>사업자 파트너</span></label><label><input name="partner_type" required type="radio" value="장비사 파트너"><span>장비사 파트너</span></label></div></div>
     <div class="field"><label>회사명 *</label><input name="company" placeholder="회사명을 입력해주세요" required><small class="company-help">개인 파트너인 경우 ‘개인’으로 입력해주세요.</small></div>
     <div class="field"><label>주요 활동 지역 *</label><input name="region" placeholder="예: 서울 · 경기" required></div>
     <div class="field"><label>현재 업종 · 직무 *</label><input name="job" placeholder="예: 공작기계 영업" required></div>
@@ -144,12 +149,13 @@
       e.preventDefault(); if(submitting)return; if(!form.checkValidity()){form.reportValidity();return;}
       var privacy=q('#privacyAgree',root); if(!privacy||!privacy.checked){if(privacy)privacy.focus();return;}
       phone.value=formatKoreanMobile(phone.value); var d=new FormData(form);
-      var payload={name:String(d.get('name')||'').trim(),phone:phone.value,email:String(d.get('email')||'').trim(),partner_type:String(d.get('partner_type')||''),company:String(d.get('company')||'').trim(),region:String(d.get('region')||'').trim(),job:String(d.get('job')||'').trim(),sales_experience:String(d.get('sales_experience')||'').trim(),customer_group:String(d.get('customer_group')||'').trim(),current_products:String(d.get('current_products')||'').trim(),inquiry:String(d.get('inquiry')||'').trim(),privacy_agree:true};
+      var utm=getFirstUtm(); var payload={name:String(d.get('name')||'').trim(),phone:phone.value,email:String(d.get('email')||'').trim(),partner_type:String(d.get('partner_type')||''),company:String(d.get('company')||'').trim(),region:String(d.get('region')||'').trim(),job:String(d.get('job')||'').trim(),sales_experience:String(d.get('sales_experience')||'').trim(),customer_group:String(d.get('customer_group')||'').trim(),current_products:String(d.get('current_products')||'').trim(),inquiry:String(d.get('inquiry')||'').trim(),privacy_agree:true,utm_source:utm.utm_source,utm_medium:utm.utm_medium,utm_campaign:utm.utm_campaign,utm_content:utm.utm_content,utm_term:utm.utm_term,landing_page:'equipment_partner'};
       submitting=true; submitButton.disabled=true; submitButton.textContent='전송 중...'; status.className=''; status.textContent='';
       try{var response=await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!response.ok)throw new Error('Webhook request failed: '+response.status);form.reset();status.className='submit-status success';status.textContent='신청이 접수됐습니다. 담당자가 확인 후 연락드리겠습니다.';submitButton.textContent='신청 완료';}
       catch(error){console.error(error);submitting=false;status.className='submit-status error';status.textContent='신청 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';submitButton.disabled=false;submitButton.textContent='파트너 상담 신청';}
     });
   }
+  captureFirstUtm();
   reconcile();
   var observer=new MutationObserver(function(){reconcile();});
   observer.observe(document.documentElement,{childList:true,subtree:true});
