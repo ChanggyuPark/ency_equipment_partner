@@ -191,3 +191,6 @@ html.ency-equipment-partner-route #page2762370.ency-equipment-source-hidden{disp
   #ency-equipment-partner-app .refined-role .role-card{padding:24px 20px 21px!important}
   #ency-equipment-partner-app .refined-role .role-card h3{margin-bottom:17px!important}
 }
+
+/* Preserve the landing's original gradient CTA against inherited Sixshop button styles. */
+#ency-equipment-partner-app .hero-actions .btn:not(.ghost),#ency-equipment-partner-app .cta-inner > .btn,#ency-equipment-partner-app #partnerSubmitButton{background:linear-gradient(105deg,var(--green),var(--blue))!important;color:#fff!important;border:0!important}
